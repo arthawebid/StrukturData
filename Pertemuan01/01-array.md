@@ -37,7 +37,7 @@ Namun:
 Oliphant, T. (2006). *Guide to NumPy*.
 DOI: [https://doi.org/10.5555/1129774](https://doi.org/10.5555/1129774)
 
-### 🧪 Latihan Praktikum
+### 🧪 Latihan Praktikum 1
 1. Buat list berisi nama 5 mahasiswa.
 2. Tambahkan 1 nama baru menggunakan `.append()`.
 3. Hapus satu elemen menggunakan `.remove()`.
@@ -59,6 +59,40 @@ print(mahasiswa)
 mahasiswa.remove("Citra")
 print("\nSetelah menghapus nama Citra:")
 print(mahasiswa)
+```
+
+### 🧪 Latihan Praktikum 2
+Input 10 data kedalam sebuah List:
+1. Buat definisi list
+2. Proses input 10 data dengan perulangan for
+3. Tampilkan data list, nilai tertinggi, terendah dan Rata-rata
+4. buat grafik bar
+
+```python
+# Definisikan list kosong untuk menyimpan angka
+list = []
+```
+```python
+# input 10 angka
+for i in range(10):
+    angka = int(input("Masukkan angka: "))
+    list.append(angka)
+```
+```python
+# tampilkan nilai maksimum, minimum, dan rata-rata
+print("List:", list)
+print("Nilai maksimum:", max(list))
+print("Nilai minimum:", min(list))
+print("Rata-rata:", sum(list)/len(list))
+```
+```python
+#buat grafik batang menggunakan matplotlib
+import matplotlib.pyplot as plt 
+plt.bar(range(len(list)), list)
+plt.title("Grafik Array")   
+plt.xlabel("Indeks")
+plt.ylabel("Nilai")
+plt.show()
 ```
 
 ## 📘 3. Definisi Array
