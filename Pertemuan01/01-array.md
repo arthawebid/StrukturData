@@ -185,41 +185,6 @@ Mengukur penggunaan memori terhadap ukuran input.
 
 ---
 
-# 🔎 Studi Kasus Project (Berbasis Penalaran)
-
-## Studi Kasus: Sistem Manajemen Antrian Klinik
-
-Sebuah klinik ingin membuat sistem:
-
-* Pendaftaran pasien
-* Pemanggilan pasien
-* Riwayat kunjungan
-
-### Permasalahan
-
-1. Bagaimana menyimpan data pasien?
-2. Bagaimana mengatur antrian?
-3. Bagaimana mencari pasien tertentu dengan cepat?
-
----
-
-## 🎓 Tugas Analisis Mahasiswa
-
-Mahasiswa diminta:
-
-1. Menentukan struktur data yang tepat untuk:
-
-   * Penyimpanan pasien
-   * Sistem antrian
-   * Riwayat kunjungan
-2. Menjelaskan alasan pemilihan berdasarkan:
-
-   * Efisiensi waktu
-   * Kemudahan implementasi
-   * Skalabilitas
-
----
-
 # 💻 Praktikum Pertemuan 1 Array dan List dalam Python
 
 ---
@@ -275,14 +240,13 @@ print(arr)
 
 ### 🧪 Latihan Praktikum (Minimal 3)
 
-1️⃣ Buat array berisi 10 angka ganjil pertama.
-2️⃣ Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.
-3️⃣ Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.
+1️⃣ Buat array berisi 10 angka ganjil pertama.  
+2️⃣ Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.  
+3️⃣ Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.  
 
 ---
 
 ## 1.2 Array 2 Dimensi
-
 ### 🔎 Teori
 
 Array 2 dimensi direpresentasikan sebagai matriks.
@@ -315,9 +279,9 @@ print(matrix)
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat matriks 3x3 dan tampilkan elemen tengahnya.
-2️⃣ Hitung jumlah seluruh elemen matriks.
-3️⃣ Buat tabel nilai 3 mahasiswa × 4 mata kuliah.
+1️⃣ Buat matriks 3x3 dan tampilkan elemen tengahnya.  
+2️⃣ Hitung jumlah seluruh elemen matriks.  
+3️⃣ Buat tabel nilai 3 mahasiswa × 4 mata kuliah.  
 
 ---
 
