@@ -49,9 +49,9 @@ Mahasiswa mampu:
 
 | Minggu | Materi | Level Kognitif (Bloom) | Bentuk Penilaian |
 |--------|--------|------------------------|------------------|
-| 1 | Array | C2-C3 | Tugas |
-| 2 | Array Multidimensi | C3 | Tugas |
-| 3 | Rekursif | C3-C4 | Tugas |
+| 1 | Array dan Array Multidimensi | C2-C3 | Tugas |
+| 2 | Rekursif | C2 | Tugas |
+| 3 | Linked List | C3 | Tugas |
 | 4 | Linked List | C3 | Tugas |
 | 5 | Double & Circular LL | C4 | Tugas |
 | 6 | Stack | C3 | Praktikum |
@@ -60,9 +60,9 @@ Mahasiswa mampu:
 | 9 | Tree | C3 | Tugas |
 |10 | AVL | C4 | Tugas |
 |11 | Graph | C3 | Tugas |
-|12 | BFS & DFS | C4 | Tugas |
-|13 | Sorting I | C3 | Praktikum |
-|14 | Sorting II | C4 | Tugas |
+|12 | Sorting I | C4 | Tugas |
+|13 | Sorting II | C3 | Praktikum |
+|14 | Searching I | C4 | Tugas |
 |15 | Searching & Hashing | C4 | Tugas |
 |16 | Final Project | C6 | UAS |
 
