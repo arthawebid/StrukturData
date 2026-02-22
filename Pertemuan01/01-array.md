@@ -10,15 +10,162 @@ Setelah mengikuti pertemuan ini mahasiswa mampu:
 4. Menganalisis kompleksitas waktu dasar (Big-O).
 5. Membandingkan operasi akses, insert, dan delete.
 
+## 💡 Manfaat Pembelajaran
+
+* Mahasiswa memahami **fondasi utama pemrograman tingkat lanjut**.
+* Mahasiswa mampu berpikir **logis, sistematis, dan efisien** dalam menyelesaikan masalah komputasi.
+* Menjadi dasar untuk mata kuliah lanjutan seperti:
+
+  * Algoritma Lanjut
+  * Basis Data
+  * Kecerdasan Buatan
+  * Machine Learning
+  * Sistem Operasi
+
 ## 📘 1. Konsep Struktur Data
+## 1.1. Apa itu Data?
+Data adalah representasi fakta mentah yang dapat diproses menjadi informasi.
 
-Struktur data adalah cara mengorganisasi dan menyimpan data agar dapat diakses secara efisien.
+Contoh:
 
-Dalam ilmu komputer, pemilihan struktur data yang tepat sangat mempengaruhi performa algoritma.
+* Angka: 10, 25, 99
+* Teks: "Andi"
+* Nilai Mahasiswa: 85
 
-Referensi akademik utama:
+Menurut teori komputasi klasik, data merupakan entitas yang diproses oleh algoritma dalam sistem komputasi (Knuth, 1997).
+
+📚 Referensi:
+Knuth, D. E. (1997). *The Art of Computer Programming*. Addison-Wesley.
+DOI: [https://doi.org/10.5555/270146](https://doi.org/10.5555/270146)
+
+## 1.2. Apa itu Struktur Data?
+Struktur data adalah cara menyimpan dan mengorganisasi data di memori agar dapat digunakan secara efisien.
+
+Menurut Aho, Hopcroft & Ullman (1983), struktur data merupakan representasi logis dan matematis dari hubungan antar elemen data.
+
+📚 Referensi:
+Aho, A. V., Hopcroft, J. E., & Ullman, J. D. (1983). *Data Structures and Algorithms*.
+DOI: [https://doi.org/10.5555/578775](https://doi.org/10.5555/578775)
 Cormen et al., *Introduction to Algorithms*, MIT Press, 2009.  
 DOI: 10.7551/mitpress/9434.001.0001
+
+## 1.3. Hubungan Struktur Data dan Algoritma
+
+Struktur data dan algoritma tidak bisa dipisahkan.
+
+> Algoritma yang baik dengan struktur data yang buruk → tetap lambat
+> Struktur data yang tepat dengan algoritma sederhana → bisa sangat cepat
+
+Menurut teori kompleksitas komputasi (Cormen et al., 2009), pemilihan struktur data sangat mempengaruhi efisiensi waktu eksekusi.
+
+📚 Referensi:
+Cormen, T. H., et al. (2009). *Introduction to Algorithms (3rd ed.)*. MIT Press.
+DOI: [https://doi.org/10.7551/mitpress/9436.001.0001](https://doi.org/10.7551/mitpress/9436.001.0001)
+
+---
+
+## 1.4. Tipe Data vs Struktur Data
+
+| Tipe Data | Struktur Data |
+| --------- | ------------- |
+| Integer   | Array         |
+| Float     | Linked List   |
+| Boolean   | Stack         |
+| Char      | Queue         |
+| String    | Tree          |
+|           | Graph         |
+
+### Penjelasan
+
+* **Tipe data** → jenis nilai yang disimpan.
+* **Struktur data** → bagaimana data tersebut diorganisasi.
+
+Contoh:
+
+```python
+nilai = [80, 85, 90, 95]
+```
+
+* Integer → tipe data
+* List → struktur data
+
+---
+
+## 1.5. Klasifikasi Struktur Data
+
+### 1.5.1. Struktur Data Linear
+* Array
+* Linked List
+* Stack
+* Queue
+
+Karakteristik:
+
+* Elemen tersusun berurutan
+* Satu jalur traversal
+
+### 1.5.2. Struktur Data Non-Linear
+
+* Tree
+* Graph
+
+Karakteristik:
+
+* Hubungan bercabang
+* Banyak jalur traversal
+
+### 1.5.3. Abstract Data Type (ADT)
+
+ADT adalah konsep abstraksi yang mendefinisikan:
+
+1. Nilai yang bisa disimpan
+2. Operasi yang bisa dilakukan
+
+Contoh: ADT Stack
+Operasi:
+
+* push()
+* pop()
+* isEmpty()
+
+ADT membantu pemrogram fokus pada **apa yang dilakukan**, bukan bagaimana diimplementasikan.
+
+Menurut Liskov (1974), abstraksi data meningkatkan modularitas dan keamanan sistem.
+
+📚 Referensi:
+Liskov, B., & Zilles, S. (1974). Programming with Abstract Data Types.
+DOI: [https://doi.org/10.1145/361011.361014](https://doi.org/10.1145/361011.361014)
+
+---
+
+### 1.5.4. Analisis Kompleksitas Algoritma
+
+Mengapa penting?
+
+Karena program harus:
+
+* Cepat
+* Efisien
+* Skalabel
+
+### 1.5.5. Kompleksitas Waktu (Time Complexity)
+
+Mengukur jumlah operasi terhadap ukuran input (n).
+
+Notasi yang digunakan: Big-O
+
+Contoh:
+
+| Kompleksitas | Contoh        |
+| ------------ | ------------- |
+| O(1)         | Akses array   |
+| O(n)         | Linear search |
+| O(log n)     | Binary search |
+| O(n²)        | Bubble sort   |
+
+### 1.5.6. Kompleksitas Ruang (Space Complexity)
+
+Mengukur penggunaan memori terhadap ukuran input.
 
 ## 📘 2. Definisi List
 ### 🔎 Teori
@@ -120,7 +267,7 @@ Karakteristik Array
 | Kontigu | Disimpan berurutan di memori |
 
 Pendeklarasian Array
-### 3.1 Array 1 Dimensi
+### 3.1. Array 1 Dimensi
 Array 1 dimensi adalah struktur linear dengan satu indeks.
 
 Secara matematis:
@@ -198,7 +345,7 @@ plt.axis('equal')  # Membuat grafik menjadi lingkaran
 plt.show()
 ```
 
-### 3.2 Array 2 Dimensi
+### 3.2. Array 2 Dimensi
 Array 2 dimensi direpresentasikan sebagai matriks.
 
 Secara matematis:
@@ -256,7 +403,7 @@ nilai_mahasiswa = np.array([[85, 90, 78, 92],
                              [89, 94, 87, 93]])
 print(nilai_mahasiswa)
 ```
-### 3.3 Array n Dimensi
+### 3.3. Array n Dimensi
 Array multidimensi digunakan dalam:
 
 * Machine Learning
