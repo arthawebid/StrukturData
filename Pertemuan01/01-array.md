@@ -279,9 +279,9 @@ print(matrix)
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat matriks 3x3 dan tampilkan elemen tengahnya.  
-2️⃣ Hitung jumlah seluruh elemen matriks.  
-3️⃣ Buat tabel nilai 3 mahasiswa × 4 mata kuliah.  
+1. Buat matriks 3x3 dan tampilkan elemen tengahnya.
+2. Hitung jumlah seluruh elemen matriks.
+3. Buat tabel nilai 3 mahasiswa × 4 mata kuliah.  
 
 ---
 
