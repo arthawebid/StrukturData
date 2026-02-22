@@ -220,12 +220,7 @@ Mahasiswa diminta:
 
 ---
 
-# 💻 Praktikum Pertemuan 1
----
-
-# 📘 MATERI PRAKTIKUM
-
-# Array dan List dalam Python
+# 💻 Praktikum Pertemuan 1 Array dan List dalam Python
 
 ---
 
