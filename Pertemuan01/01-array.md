@@ -576,7 +576,7 @@ Mahasiswa wajib:
 
 3. Screenshot hasil running program
 
-4. Link dikumpulkan di LMS
+4. Link dikumpulkan di LMS Elsa
 
 ---
 
