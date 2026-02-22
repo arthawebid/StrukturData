@@ -143,20 +143,23 @@ print(arr)
 ```
 ### 🧪 Latihan Praktikum (Minimal 3)
 1. Buat array berisi 10 angka ganjil pertama.
-2. Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.
+2. Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi
 3. Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.
+4. Buat array berisi data jumlah Anggota Pria dan Wanita, buat grafik Pie untuk menggambarkan data tersebut
 
 ```python
 ## Mengimpor library NumPy untuk bekerja dengan array
 import numpy as np 
 ```
 ```python
+# 1. Array berisi 10 bilangan ganjil pertama
 print("1. Array berisi 10 bilangan ganjil pertama:  ")
 ## Membuat array bilangan ganjil pertama
 bilganjil = np.array([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) 
 print(bilganjil)
 ```
 ```python
+# 2. Array berisi nilai mahasiswa dan tampilkan nilai tertinggi
 print("\n2. Array berisi nilai mahasiswa dan tampilkan nilai tertinggi:  ")
 ## Membuat array nilai mahasiswa
 nilai_mahasiswa = np.array([85, 90, 78, 92, 88, 95, 80, 91, 89, 94, 87, 93, 86, 90, 91])
@@ -167,6 +170,7 @@ print(nilai_mahasiswa)
 print("Nilai tertinggi:", nilai_tertinggi)  
 ```
 ```python
+# 3. Array array berisi 5 angka, lalu hitung rata-ratanya menggunakan .mean():
 print("\n3. Array array berisi 5 angka, lalu hitung rata-ratanya menggunakan .mean():  ")
 ## Membuat array angka
 angka = np.array([10, 20, 30, 40, 50])
@@ -175,6 +179,23 @@ angka = np.array([10, 20, 30, 40, 50])
 rata_rata = np.mean(angka)
 print("Array:", angka)
 print("Rata-rata:", rata_rata)
+```
+```python
+# 4. Buat array berisi data jumlah Anggota Pria dan Wanita
+print("\n4. Buat array berisi data jumlah Anggota Pria dan Wanita:  ")
+## Membuat array jumlah anggota pria dan wanita
+jumlah_anggota = np.array([60, 40])  # Contoh: 60 pria dan 40 wanita
+print("Jumlah anggota (Pria, Wanita):", jumlah_anggota)
+```
+```python
+# Buat grafik pie chart menggunakan matplotlib
+import matplotlib.pyplot as plt
+labels = ['Pria', 'Wanita']
+sizes = jumlah_anggota
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+plt.title("Grafik Pie Chart Jumlah Anggota")
+plt.axis('equal')  # Membuat grafik menjadi lingkaran
+plt.show()
 ```
 
 ### 3.2 Array 2 Dimensi
@@ -355,14 +376,16 @@ Fitur minimal:
 2. Tampilkan nilai tertinggi & terendah
 3. Hitung rata-rata
 4. Hitung jumlah mahasiswa lulus (>= 60)
-5. Analisis kompleksitas tiap operasi
+5. Buat grafik untuk menggambarkan nilai tertinggi dan terendah
+6. Buat grafik untuk menggambarkan data kelulusan
+7. Analisis kompleksitas tiap operasi
 
 ## Struktur Repository
 
 ```
 01-array/
-    main.py
-    fungsi_array.py
+    Soal_01.py
+    soal_02.py
     README.md
 ```
 ## Isi README.md Wajib
