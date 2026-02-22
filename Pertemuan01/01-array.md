@@ -319,9 +319,9 @@ print(arr3d)
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat array 3D berukuran 2x2x2.
-2️⃣ Tampilkan elemen pada indeks [1][0][1].
-3️⃣ Hitung total seluruh elemen array 3D.
+1. Buat array 3D berukuran 2x2x2.
+2. Tampilkan elemen pada indeks [1][0][1].
+3. Hitung total seluruh elemen array 3D.
 
 ---
 
