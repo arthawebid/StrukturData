@@ -220,21 +220,363 @@ Mahasiswa diminta:
 
 ---
 
-## Contoh Jawaban yang Diharapkan (Arah Penalaran)
+# 💻 Praktikum Pertemuan 1
 
-| Kebutuhan   | Struktur Data      | Alasan         |
-| ----------- | ------------------ | -------------- |
-| Data Pasien | List / Array       | Mudah disimpan |
-| Antrian     | Queue              | FIFO           |
-| Riwayat     | List / Linked List | Dinamis        |
+Baik. Berikut adalah **Materi Praktikum Pertemuan 1 (Array & List pada Python dengan NumPy)** yang sudah diperluas dengan:
 
-Mahasiswa harus menjelaskan dalam bentuk analisis, bukan hanya menyebutkan jawaban.
+* Penjelasan teori yang lebih akademik
+* Sitasi ilmiah dengan DOI
+* Contoh kode
+* Minimal 3 latihan praktikum per bagian
+* Pendekatan analitis (bukan sekadar coding)
+
+Materi ini bisa langsung dimasukkan ke modul atau LMS.
 
 ---
 
-# 💻 Praktikum Pertemuan 1
+# 📘 MATERI PRAKTIKUM
 
-## Praktikum 1: Analisis Kompleksitas Sederhana
+# Array dan List dalam Python
+
+---
+
+# 📚 Dasar Teori Array
+
+Array adalah struktur data linear yang menyimpan elemen dengan tipe data yang sama dan disimpan dalam memori yang berurutan (contiguous memory allocation).
+
+Menurut Goodrich, Tamassia & Goldwasser (2014), array memungkinkan akses elemen secara langsung (random access) dengan kompleksitas waktu O(1).
+
+📖 Referensi:
+Goodrich, M. T., Tamassia, R., & Goldwasser, M. H. (2014). *Data Structures and Algorithms in Python*.
+DOI: [https://doi.org/10.1002/9781118290279](https://doi.org/10.1002/9781118290279)
+
+Dalam konteks komputasi numerik modern, library **NumPy** menggunakan struktur array yang dioptimalkan untuk komputasi ilmiah.
+
+📖 Referensi:
+Harris, C. R., et al. (2020). Array programming with NumPy. *Nature*, 585.
+DOI: [https://doi.org/10.1038/s41586-020-2649-2](https://doi.org/10.1038/s41586-020-2649-2)
+
+---
+
+# 🔷 1️⃣ Pendeklarasian Array
+
+---
+
+## 1.1 Array 1 Dimensi
+
+### 🔎 Teori
+
+Array 1 dimensi adalah struktur linear dengan satu indeks.
+
+Secara matematis:
+A[i], i = 0,1,2,...,n-1
+
+Akses langsung:
+
+* Kompleksitas: O(1)
+* Memori: Kontigu
+
+---
+
+### 💻 Contoh
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+print(arr)
+```
+
+---
+
+### 🧪 Latihan Praktikum (Minimal 3)
+
+1️⃣ Buat array berisi 10 angka ganjil pertama.
+2️⃣ Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.
+3️⃣ Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.
+
+---
+
+## 1.2 Array 2 Dimensi
+
+### 🔎 Teori
+
+Array 2 dimensi direpresentasikan sebagai matriks.
+
+Secara matematis:
+A[i][j]
+
+Digunakan untuk:
+
+* Tabel data
+* Matriks matematika
+* Representasi citra (image)
+
+Kompleksitas akses:
+O(1)
+
+---
+
+### 💻 Contoh
+
+```python
+import numpy as np
+
+matrix = np.array([[1,2,3],
+                   [4,5,6]])
+print(matrix)
+```
+
+---
+
+### 🧪 Latihan Praktikum
+
+1️⃣ Buat matriks 3x3 dan tampilkan elemen tengahnya.
+2️⃣ Hitung jumlah seluruh elemen matriks.
+3️⃣ Buat tabel nilai 3 mahasiswa × 4 mata kuliah.
+
+---
+
+## 1.3 Array n Dimensi
+
+### 🔎 Teori
+
+Array multidimensi digunakan dalam:
+
+* Machine Learning
+* Pengolahan Citra
+* Data Tensor
+
+NumPy mendukung n-dimensi array (ndarray).
+
+📖 Referensi tambahan:
+Van der Walt et al. (2011). The NumPy array.
+DOI: [https://doi.org/10.1109/MCSE.2011.37](https://doi.org/10.1109/MCSE.2011.37)
+
+---
+
+### 💻 Contoh
+
+```python
+import numpy as np
+
+arr3d = np.array([
+    [[1,2],[3,4]],
+    [[5,6],[7,8]]
+])
+print(arr3d)
+```
+
+---
+
+### 🧪 Latihan Praktikum
+
+1️⃣ Buat array 3D berukuran 2x2x2.
+2️⃣ Tampilkan elemen pada indeks [1][0][1].
+3️⃣ Hitung total seluruh elemen array 3D.
+
+---
+
+## 1.4 List (Alternatif Array Dinamis)
+
+### 🔎 Teori
+
+List adalah struktur data dinamis dalam Python yang:
+
+* Mutable
+* Bisa heterogen
+* Tidak harus kontigu seperti array NumPy
+
+Namun:
+
+* Tidak seefisien NumPy untuk komputasi numerik besar.
+
+📖 Referensi:
+Oliphant, T. (2006). *Guide to NumPy*.
+DOI: [https://doi.org/10.5555/1129774](https://doi.org/10.5555/1129774)
+
+---
+
+### 💻 Contoh
+
+```python
+data = [10, "Andi", 3.14, True]
+print(data)
+```
+
+---
+
+### 🧪 Latihan Praktikum
+
+1️⃣ Buat list berisi nama 5 mahasiswa.
+2️⃣ Tambahkan 1 nama baru menggunakan `.append()`.
+3️⃣ Hapus satu elemen menggunakan `.remove()`.
+
+---
+
+# 🔷 2️⃣ Akses Array
+
+---
+
+## 🔎 Teori
+
+Akses elemen array dilakukan menggunakan indeks.
+
+Karena array menggunakan contiguous memory:
+Alamat memori dihitung secara matematis.
+
+Untuk array 1D:
+Address = base + (index × ukuran_tipe_data)
+
+Kompleksitas:
+O(1)
+
+📖 Referensi:
+Cormen et al. (2009). *Introduction to Algorithms*.
+DOI: [https://doi.org/10.7551/mitpress/9436.001.0001](https://doi.org/10.7551/mitpress/9436.001.0001)
+
+---
+
+### 💻 Contoh Akses 1D
+
+```python
+arr = np.array([5, 10, 15])
+print(arr[1])
+```
+
+---
+
+### 💻 Contoh Akses 2D
+
+```python
+matrix = np.array([[1,2],[3,4]])
+print(matrix[1,0])
+```
+
+---
+
+### 💻 Modifikasi Nilai
+
+```python
+matrix[0,1] = 100
+print(matrix)
+```
+
+---
+
+### 🧪 Latihan Praktikum
+
+1️⃣ Buat array 1D dan ubah elemen indeks ke-2 menjadi 999.
+2️⃣ Buat matriks 2x2 dan ubah semua elemennya menjadi 0 menggunakan perulangan.
+3️⃣ Buat array 3D lalu tampilkan semua elemennya menggunakan nested loop.
+
+---
+
+# 🔷 3️⃣ Contoh Program Dengan Array
+
+---
+
+## 🔎 Teori
+
+NumPy menyediakan fungsi statistik bawaan:
+
+* min()
+* max()
+* mean()
+* sum()
+* std()
+* argmin()
+* argmax()
+
+Operasi ini dioptimalkan menggunakan vectorized computation.
+
+📖 Referensi:
+Harris et al. (2020).
+DOI: [https://doi.org/10.1038/s41586-020-2649-2](https://doi.org/10.1038/s41586-020-2649-2)
+
+---
+
+### 💻 Contoh Program Statistik
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print("Minimum:", arr.min())
+print("Maximum:", arr.max())
+print("Mean:", arr.mean())
+print("Sum:", arr.sum())
+print("Std:", arr.std())
+```
+
+---
+
+### 💻 Contoh Program Argmin & Argmax
+
+```python
+print("Index Minimum:", arr.argmin())
+print("Index Maximum:", arr.argmax())
+```
+
+---
+
+### 💻 Studi Kasus Mini
+
+Analisis Nilai Mahasiswa
+
+```python
+nilai = np.array([75, 80, 90, 60, 85])
+
+if nilai.mean() >= 75:
+    print("Rata-rata lulus")
+else:
+    print("Rata-rata tidak lulus")
+```
+
+---
+
+### 🧪 Latihan Praktikum
+
+1️⃣ Buat program menghitung nilai rata-rata 10 mahasiswa.
+2️⃣ Buat program menentukan nilai tertinggi dan terendah.
+3️⃣ Buat program menghitung standar deviasi dan jelaskan maknanya.
+
+---
+
+# 📌 Tugas Pengumpulan GitHub
+
+Mahasiswa wajib mengumpulkan:
+
+📂 struktur-data-pertemuan-1/
+
+* array1d.py
+* array2d.py
+* array3d.py
+* list.py
+* akses_array.py
+* statistik_array.py
+* README.md (analisis & refleksi)
+
+---
+
+# 🧠 Pertanyaan Analitis untuk Mahasiswa
+
+1. Mengapa array lebih cepat daripada list dalam komputasi numerik besar?
+2. Apa dampak jika data sangat besar (1 juta elemen)?
+3. Kapan sebaiknya menggunakan list dibanding NumPy array?
+4. Buatlah kesimpulan perbedaan Array dan List pada Python! 
+
+---
+
+# 📌 Kesimpulan Praktikum
+
+* Array efisien untuk komputasi numerik.
+* List fleksibel untuk data heterogen.
+* Akses indeks pada array bersifat O(1).
+* NumPy menggunakan optimasi C-level untuk performa tinggi.
+
+## Analisis Kompleksitas Sederhana
 
 Mahasiswa membuat 3 fungsi Python:
 
