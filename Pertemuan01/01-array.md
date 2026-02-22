@@ -244,6 +244,26 @@ print(arr)
 2. Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.
 3. Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.  
 
+```python
+import numpy as np
+
+print("1. Array berisi 10 bilangan ganjil pertama:  ")
+bilganjil = np.array([1, 3, 5, 7, 9, 11, 13, 15, 17, 19])
+print(bilganjil)
+
+print("\n2. Array berisi nilai mahasiswa dan tampilkan nilai tertinggi:  ")
+
+nilai_mahasiswa = np.array([85, 90, 78, 92, 88])
+nilai_tertinggi = np.max(nilai_mahasiswa)
+print(nilai_mahasiswa)
+print("Nilai tertinggi:", nilai_tertinggi)  
+
+print("\n3. Array array berisi 5 angka, lalu hitung rata-ratanya menggunakan .mean():  ")
+angka = np.array([10, 20, 30, 40, 50])
+rata_rata = np.mean(angka)
+print("Array:", angka)
+print("Rata-rata:", rata_rata)
+```
 ---
 
 ## 1.2 Array 2 Dimensi
