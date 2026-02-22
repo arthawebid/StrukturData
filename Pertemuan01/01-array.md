@@ -356,9 +356,9 @@ print(data)
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat list berisi nama 5 mahasiswa.
-2️⃣ Tambahkan 1 nama baru menggunakan `.append()`.
-3️⃣ Hapus satu elemen menggunakan `.remove()`.
+1. Buat list berisi nama 5 mahasiswa.
+2. Tambahkan 1 nama baru menggunakan `.append()`.
+3. Hapus satu elemen menggunakan `.remove()`.
 
 ---
 
