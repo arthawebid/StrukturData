@@ -414,9 +414,9 @@ print(matrix)
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat array 1D dan ubah elemen indeks ke-2 menjadi 999.
-2️⃣ Buat matriks 2x2 dan ubah semua elemennya menjadi 0 menggunakan perulangan.
-3️⃣ Buat array 3D lalu tampilkan semua elemennya menggunakan nested loop.
+1. Buat array 1D dan ubah elemen indeks ke-2 menjadi 999.
+2. Buat matriks 2x2 dan ubah semua elemennya menjadi 0 menggunakan perulangan.
+3. Buat array 3D lalu tampilkan semua elemennya menggunakan nested loop.
 
 ---
 
