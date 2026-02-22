@@ -247,12 +247,14 @@ print(arr)
 ```python
 ## Mengimpor library NumPy untuk bekerja dengan array
 import numpy as np 
-
+```
+```python
 print("1. Array berisi 10 bilangan ganjil pertama:  ")
 ## Membuat array bilangan ganjil pertama
 bilganjil = np.array([1, 3, 5, 7, 9, 11, 13, 15, 17, 19]) 
 print(bilganjil)
-
+```
+```python
 print("\n2. Array berisi nilai mahasiswa dan tampilkan nilai tertinggi:  ")
 ## Membuat array nilai mahasiswa
 nilai_mahasiswa = np.array([85, 90, 78, 92, 88, 95, 80, 91, 89, 94, 87, 93, 86, 90, 91])
@@ -261,7 +263,8 @@ nilai_mahasiswa = np.array([85, 90, 78, 92, 88, 95, 80, 91, 89, 94, 87, 93, 86, 
 nilai_tertinggi = np.max(nilai_mahasiswa)
 print(nilai_mahasiswa)
 print("Nilai tertinggi:", nilai_tertinggi)  
-
+```
+```python
 print("\n3. Array array berisi 5 angka, lalu hitung rata-ratanya menggunakan .mean():  ")
 ## Membuat array angka
 angka = np.array([10, 20, 30, 40, 50])
@@ -309,6 +312,31 @@ print(matrix)
 1. Buat matriks 3x3 dan tampilkan elemen tengahnya.
 2. Hitung jumlah seluruh elemen matriks.
 3. Buat tabel nilai 3 mahasiswa × 4 mata kuliah.  
+
+```python
+## import library numpy
+import numpy as np
+```
+```python
+print("1. Matriks 3x3 dan tampilkan elemen tengahnya:  ")
+matriks = np.array([[1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]])
+print(matriks)
+print("Elemen tengah:", matriks[1,1])
+```
+```python
+print("\n2. Hitung jumlah seluruh elemen matriks:  ")
+jumlah_elemen = np.sum(matriks)
+print("Jumlah elemen:", jumlah_elemen) 
+```
+```python
+print("\n3. Buat tabel nilai 3 mahasiswa × 4 mata kuliah:  ")
+nilai_mahasiswa = np.array([[85, 90, 78, 92],
+                             [88, 95, 80, 91],
+                             [89, 94, 87, 93]])
+print(nilai_mahasiswa)
+```
 
 ---
 
