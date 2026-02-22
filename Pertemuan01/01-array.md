@@ -538,9 +538,9 @@ else:
 
 ### 🧪 Latihan Praktikum
 
-1️⃣ Buat program menghitung nilai rata-rata 10 mahasiswa.
-2️⃣ Buat program menentukan nilai tertinggi dan terendah.
-3️⃣ Buat program menghitung standar deviasi dan jelaskan maknanya.
+1. Buat program menghitung nilai rata-rata 10 mahasiswa.  
+2. Buat program menentukan nilai tertinggi dan terendah.  
+3. Buat program menghitung standar deviasi dan jelaskan maknanya.  
 
 ---
 
