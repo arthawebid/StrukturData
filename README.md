@@ -1,512 +1,124 @@
-# 📚 MATA KULIAH: STRUKTUR DATA
-
-Semester 2 | 3 SKS (T=2, P=1)
-
----
-
-# 🔹 PERTEMUAN 1
-
-## ARRAY (1D & 2D)
-
-### 🎯 Tujuan
-
-Mahasiswa mampu memahami konsep array dan mengimplementasikan array 1D dan 2D.
-
-### ✅ Manfaat
-
-* Dasar semua struktur data
-* Memahami penyimpanan data terstruktur
-* Bekal ke sorting & searching
-
-### 📘 Materi Inti (Sederhana)
-
-* Struktur data = cara menyimpan & mengatur data
-* Array = kumpulan data bertipe sama
-* Index dimulai dari 0
-* 1D → seperti daftar
-* 2D → seperti tabel
-
-Contoh:
-
-```python
-# Array 1D
-data = [10, 20, 30]
-
-# Array 2D
-matrix = [
-    [1,2],
-    [3,4]
-]
-```
-
-### 🧪 Praktikum
-
-1. Input 10 angka → tampilkan nilai terbesar
-2. Buat program matriks 3x3 → hitung jumlah tiap baris
-
-### 📝 Tugas GitHub
-
-Buat repository:
-
-```
-struktur-data-pertemuan-1
-```
-
-Isi:
-
-* program_array_1d.py
-* program_array_2d.py
-* README.md (penjelasan konsep)
+# 📘 MATA KULIAH STRUKTUR DATA
+Program Studi ________
+Semester 2 | 3 SKS (2T-1P)
 
 ---
 
-# 🔹 PERTEMUAN 2
+## 📌 DESKRIPSI MATA KULIAH
+Mata kuliah ini membahas konsep dasar struktur data dan implementasinya dalam pemrograman, meliputi array, linked list, stack, queue, tree, graph, sorting, dan searching. Mahasiswa akan memahami bagaimana memilih struktur data yang tepat untuk menyelesaikan permasalahan komputasi secara efisien.
 
-## ARRAY N-DIMENSI & ARRAY DINAMIS
-
-### 🎯 Tujuan
-
-Mahasiswa memahami array multidimensi dan konsep array dinamis.
-
-### ✅ Manfaat
-
-Digunakan dalam:
-
-* Pengolahan citra
-* Machine learning
-* Data tabel kompleks
-
-### 📘 Materi
-
-* 3D array → seperti kubus data
-* Array dinamis → ukuran bisa berubah
-
-Contoh:
-
-```python
-data = []
-data.append(10)
-data.append(20)
-```
-
-### 🧪 Praktikum
-
-* Buat sistem input nilai mahasiswa (dinamis)
-* Hitung rata-rata otomatis
-
-### 📝 Tugas GitHub
-
-Update repo sebelumnya:
-
-* tambah folder pertemuan-2
-* jelaskan perbedaan array statis & dinamis
+Referensi utama:
+- Cormen et al., Introduction to Algorithms (2009). DOI: 10.7551/mitpress/9434.001.0001
+- Goodrich et al., Data Structures and Algorithms in Python (2013). DOI: 10.1002/9781118771334
 
 ---
 
-# 🔹 PERTEMUAN 3
+# 🎯 TUJUAN PEMBELAJARAN
 
-## REKURSIF
+Setelah mengikuti perkuliahan ini, mahasiswa mampu:
 
-### 🎯 Tujuan
-
-Mahasiswa memahami fungsi rekursif.
-
-### ✅ Manfaat
-
-Digunakan pada:
-
-* Tree
-* DFS Graph
-* Sorting tertentu
-
-### 📘 Materi
-
-Rekursif = fungsi memanggil dirinya sendiri.
-
-Contoh:
-
-```python
-def faktorial(n):
-    if n == 1:
-        return 1
-    return n * faktorial(n-1)
-```
-
-### 🧪 Praktikum
-
-* Faktorial
-* Deret Fibonacci
-
-### 📝 Tugas GitHub
-
-Repo:
-
-```
-struktur-data-pertemuan-3
-```
-
-Buat:
-
-* faktorial_rekursif.py
-* fibonacci_rekursif.py
-* analisis waktu eksekusi
+1. Memahami konsep dan klasifikasi struktur data.
+2. Mengimplementasikan struktur data dasar dan lanjutan.
+3. Menganalisis kompleksitas waktu dan ruang.
+4. Memilih struktur data yang tepat untuk menyelesaikan kasus nyata.
+5. Mengintegrasikan berbagai struktur data dalam satu sistem.
 
 ---
 
-# 🔹 PERTEMUAN 4-5
+# 🚀 MANFAAT PEMBELAJARAN
 
-## LINKED LIST
-
-### 🎯 Tujuan
-
-Mahasiswa mampu membuat:
-
-* Single Linked List
-* Double Linked List
-* Circular Linked List
-
-### ✅ Manfaat
-
-Digunakan dalam:
-
-* Browser history
-* Undo/Redo
-* Sistem playlist
-
-### 📘 Konsep Sederhana
-
-Linked List = node yang saling terhubung
-
-Node:
-
-```
-[data | next]
-```
-
-Contoh dasar:
-
-```python
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-```
-
-### 🧪 Praktikum
-
-* Insert awal
-* Insert akhir
-* Hapus node
-* Traversal
-
-### 📝 Tugas 1 (Sesuai RPS)
-
-Implementasi:
-Circular Linked List menggunakan rekursif
-
-Repo:
-
-```
-struktur-data-tugas-1
-```
-
-Isi:
-
-* source code
-* paper analisis PDF
-* README
+- Meningkatkan kemampuan problem solving algoritmik.
+- Fondasi untuk mata kuliah lanjutan (AI, Data Mining, Machine Learning, Database).
+- Persiapan teknis untuk coding interview.
+- Memahami optimasi performa program.
 
 ---
 
-# 🔹 PERTEMUAN 6
+# 🎓 TARGET PEMBELAJARAN (Learning Outcomes)
 
-## STACK
+Mahasiswa mampu:
 
-### 🎯 Tujuan
-
-Mahasiswa mampu membuat stack dengan:
-
-* Array
-* Linked List
-
-### ✅ Manfaat
-
-Digunakan pada:
-
-* Undo
-* Call Stack
-* Validasi tanda kurung
-
-### 📘 Konsep
-
-Stack = LIFO (Last In First Out)
-
-Operasi:
-
-* push
-* pop
-* peek
-
-### 🧪 Praktikum
-
-* Validasi kurung "()[]{}"
-* Simulasi undo
-
-### 📝 Tugas
-
-Upload:
-
-```
-stack-array.py
-stack-linkedlist.py
-```
+- Menjelaskan konsep ADT dan Big-O.
+- Mengimplementasikan struktur data linear dan non-linear.
+- Melakukan analisis perbandingan algoritma.
+- Mendesain sistem berbasis struktur data.
 
 ---
 
-# 🔹 PERTEMUAN 7
+# 📑 TOS (TABLE OF SPECIFICATION)
 
-## QUEUE & CIRCULAR QUEUE
-
-### 🎯 Tujuan
-
-Mahasiswa mampu mengimplementasikan Queue.
-
-### ✅ Manfaat
-
-Digunakan pada:
-
-* Antrian bank
-* Printer queue
-* BFS graph
-
-### 📘 Konsep
-
-Queue = FIFO (First In First Out)
-
-Operasi:
-
-* enqueue
-* dequeue
-
-### 🧪 Praktikum
-
-* Sistem antrian rumah sakit
-* Circular queue dengan array
-
-### 📝 Tugas 2 (Sesuai RPS)
-
-Linked List untuk Stack & Queue
-
-Repo:
-
-```
-struktur-data-tugas-2
-```
+| Minggu | Materi | Level Kognitif (Bloom) | Bentuk Penilaian |
+|--------|--------|------------------------|------------------|
+| 1 | Array | C2-C3 | Tugas |
+| 2 | Array Multidimensi | C3 | Tugas |
+| 3 | Rekursif | C3-C4 | Tugas |
+| 4 | Linked List | C3 | Tugas |
+| 5 | Double & Circular LL | C4 | Tugas |
+| 6 | Stack | C3 | Praktikum |
+| 7 | Queue | C3 | Praktikum |
+| 8 | UTS | C2-C4 | Ujian |
+| 9 | Tree | C3 | Tugas |
+|10 | AVL | C4 | Tugas |
+|11 | Graph | C3 | Tugas |
+|12 | BFS & DFS | C4 | Tugas |
+|13 | Sorting I | C3 | Praktikum |
+|14 | Sorting II | C4 | Tugas |
+|15 | Searching & Hashing | C4 | Tugas |
+|16 | Final Project | C6 | UAS |
 
 ---
 
-# 🔹 PERTEMUAN 8
+# 📜 KONTRAK PERKULIAHAN
 
-## UTS
-
-Bentuk:
-
-* Tes coding
-* Analisis kompleksitas
-* Implementasi struktur data
-
----
-
-# 🔹 PERTEMUAN 9-10
-
-## TREE
-
-### 🎯 Tujuan
-
-Mahasiswa mampu membuat:
-
-* Binary Tree
-* Traversal
-* Balanced Tree
-
-### ✅ Manfaat
-
-Digunakan pada:
-
-* Database indexing
-* File system
-* AI decision tree
-
-### 📘 Konsep
-
-Traversal:
-
-* Preorder
-* Inorder
-* Postorder
-
-### 🧪 Praktikum
-
-* Bangun binary tree
-* Implement traversal
-* Hitung tinggi tree
-
-### 📝 Tugas
-
-Implementasi BST + balancing sederhana
+1. Kehadiran minimal 75%.
+2. Setiap tugas wajib diupload ke GitHub masing-masing.
+3. Minimal 5 commit setiap tugas.
+4. Plagiarisme = nilai 0.
+5. Keterlambatan pengumpulan: -10% per hari.
+6. Menggunakan branch `develop` untuk proses pengerjaan.
+7. README wajib berisi:
+   - Penjelasan konsep
+   - Flowchart
+   - Analisis kompleksitas
 
 ---
 
-# 🔹 PERTEMUAN 11
+# 📊 RUBRIK PENILAIAN AKHIR
 
-## GRAPH
+## Komponen Penilaian
 
-### 🎯 Tujuan
-
-Mahasiswa mampu membuat graph dan algoritma dasar.
-
-### ✅ Manfaat
-
-Digunakan pada:
-
-* Google Maps
-* Social media
-* Network
-
-### 📘 Representasi
-
-* Adjacency Matrix
-* Adjacency List
-
-### 🧪 Praktikum
-
-* Implement BFS
-* Implement DFS
-
-### 📝 Tugas
-
-Buat simulasi pencarian rute sederhana.
+| Komponen | Bobot |
+|----------|--------|
+| Keaktifan | 10% |
+| Tugas | 35% |
+| Kuis | 5% |
+| UTS | 20% |
+| UAS / Final Project | 30% |
 
 ---
 
-# 🔹 PERTEMUAN 12-13
+## Rubrik Tugas
 
-## SORTING
-
-### 🎯 Tujuan
-
-Mahasiswa memahami dan membandingkan:
-
-* Bubble
-* Selection
-* Insertion
-* Merge
-* Quick Sort
-
-### ✅ Manfaat
-
-Digunakan dalam:
-
-* Database
-* Ranking
-* Data processing
-
-### 🧪 Praktikum
-
-Bandingkan waktu eksekusi tiap algoritma.
-
-### 📝 Tugas 3 (Sesuai RPS)
-
-Sorting menggunakan Tree
-
-Repo:
-
-```
-struktur-data-tugas-3
-```
+| Aspek | Skor |
+|-------|------|
+| Kesesuaian Konsep | 30 |
+| Implementasi Program | 30 |
+| Analisis Kompleksitas | 20 |
+| Dokumentasi README | 10 |
+| Kerapian & Commit Git | 10 |
 
 ---
 
-# 🔹 PERTEMUAN 14-15
+## Rubrik Final Project
 
-## SEARCHING
-
-### 🎯 Tujuan
-
-Mahasiswa mampu mengimplementasikan:
-
-* Linear Search
-* Binary Search
-* Hashing
-
-### ✅ Manfaat
-
-Digunakan dalam:
-
-* Sistem login
-* Database lookup
-* Search engine
-
-### 🧪 Praktikum
-
-* Bandingkan linear vs binary
-* Implement hash table sederhana
-
-### 📝 Tugas 4 (Sesuai RPS)
-
-Repo:
-
-```
-struktur-data-tugas-4
-```
+| Aspek | Skor |
+|-------|------|
+| Integrasi Struktur Data | 25 |
+| Fungsionalitas Sistem | 25 |
+| Analisis & Optimasi | 20 |
+| Dokumentasi | 15 |
+| Presentasi | 15 |
 
 ---
 
-# 🔹 PERTEMUAN 16
-
-## UAS (PROYEK BESAR)
-
-Buat:
-Sistem Manajemen Data Mahasiswa berbasis CLI
-
-Harus mengandung:
-
-* Linked List
-* Stack/Queue
-* Tree
-* Sorting
-* Searching
-
-Upload ke:
-
-```
-struktur-data-final-project
-```
-
----
-
-# 📊 SISTEM PENILAIAN (Sesuai RPS) 
-
-| Komponen  | Bobot |
-| --------- | ----- |
-| Keaktifan | 10%   |
-| Tugas     | 35%   |
-| Kuis      | 5%    |
-| UTS       | 20%   |
-| UAS       | 30%   |
-
----
-
-# 📌 FORMAT WAJIB GITHUB
-
-Setiap mahasiswa wajib:
-
-* 1 Repository per tugas
-* README menjelaskan:
-
-  * Konsep
-  * Flowchart
-  * Analisis kompleksitas
-* Minimal 5 commit per tugas
-* Gunakan branch develop
-
+# 📂 STRUKTUR REPOSITORY
