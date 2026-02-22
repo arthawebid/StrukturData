@@ -240,8 +240,8 @@ print(arr)
 
 ### 🧪 Latihan Praktikum (Minimal 3)
 
-1️⃣ Buat array berisi 10 angka ganjil pertama.  
-2️⃣ Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.  
+1️⃣ Buat array berisi 10 angka ganjil pertama.
+2️⃣ Buat array berisi nilai mahasiswa dan tampilkan nilai tertinggi.
 3️⃣ Buat array berisi 5 angka, lalu hitung rata-ratanya menggunakan `.mean()`.  
 
 ---
