@@ -20,8 +20,8 @@ Referensi akademik utama:
 Cormen et al., *Introduction to Algorithms*, MIT Press, 2009.  
 DOI: 10.7551/mitpress/9434.001.0001
 
-
-## 📘 2. Definisi Array
+## 📘 2. Definisi List
+## 📘 3. Definisi Array
 
 Array adalah struktur data linier yang:
 
@@ -66,7 +66,7 @@ Penjelasan:
 
 # 🧪 PRAKTIKUM
 
-## Praktikum 1 – Implementasi Array Dasar
+## Praktikum 1 – Implementasi List
 
 Buat program Python:
 
@@ -83,15 +83,25 @@ print("Nilai maksimum:", max(arr))
 print("Nilai minimum:", min(arr))
 print("Rata-rata:", sum(arr)/len(arr))
 ````
-
 ## Praktikum 2 – Operasi Insert & Delete Manual
 Tanpa menggunakan method bawaan seperti `.insert()` atau `.remove()`.
 
 Buat fungsi:
 * insert_tengah(arr, posisi, nilai)
 * delete_tengah(arr, posisi)
-
 Tujuan: memahami shifting elemen.
+
+Buat bar grafik dari data yang di inputkan
+```python
+#buat grafik batang menggunakan matplotlib
+import matplotlib.pyplot as plt 
+plt.bar(range(len(arr)), arr)
+plt.title("Grafik Array")   
+plt.xlabel("Indeks")
+plt.ylabel("Nilai")
+plt.show()
+```
+## Array 
 
 # 📝 PROJECT TUGAS (WAJIB GITHUB)
 
