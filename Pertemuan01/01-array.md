@@ -377,7 +377,26 @@ print(arr3d)
 1. Buat array 3D berukuran 2x2x2.
 2. Tampilkan elemen pada indeks [1][0][1].
 3. Hitung total seluruh elemen array 3D.
-
+---
+```python
+# import library numpy
+import numpy as np
+```
+```python
+# 1. Array 3D berukuran 2x2x2.
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+print("Array 3D berukuran 2x2x2:")
+print(array_3d)
+```
+```python
+# 2. Tampilkan elemen pada indeks [1][0][1].
+print("Elemen pada indeks [1][0][1]:", array_3d[1, 0, 1])
+```
+```python
+# 3. Hitung total seluruh elemen array 3D.
+total = np.sum(array_3d)
+print("Total seluruh elemen array 3D:", total)
+```
 ---
 
 ## 1.4 List (Alternatif Array Dinamis)
@@ -414,7 +433,26 @@ print(data)
 1. Buat list berisi nama 5 mahasiswa.
 2. Tambahkan 1 nama baru menggunakan `.append()`.
 3. Hapus satu elemen menggunakan `.remove()`.
-
+---
+```python
+# Buat list berisi nama 5 mahasiswa
+mahasiswa = ["Andi", "Budi", "Citra", "Dewi", "Eko"]
+print("List nama mahasiswa:")
+print(mahasiswa)
+```
+```python
+# Tambahkan 1 nama baru menggunakan `.append()`.
+mahasiswa.append("Fajar")
+print("\nSetelah menambahkan nama baru:")
+print(mahasiswa)
+```
+```python
+# Hapus satu elemen menggunakan `.remove()`.
+mahasiswa.remove("Citra")
+print("\nSetelah menghapus nama Citra:")
+print(mahasiswa)
+```
+   
 ---
 
 # 🔷 2️⃣ Akses Array
