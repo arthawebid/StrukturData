@@ -120,5 +120,3 @@ Mahasiswa mampu:
 | Presentasi | 15 |
 
 ---
-
-# 📂 STRUKTUR REPOSITORY
