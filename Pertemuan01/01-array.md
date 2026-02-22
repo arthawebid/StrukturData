@@ -221,17 +221,6 @@ Mahasiswa diminta:
 ---
 
 # 💻 Praktikum Pertemuan 1
-
-Baik. Berikut adalah **Materi Praktikum Pertemuan 1 (Array & List pada Python dengan NumPy)** yang sudah diperluas dengan:
-
-* Penjelasan teori yang lebih akademik
-* Sitasi ilmiah dengan DOI
-* Contoh kode
-* Minimal 3 latihan praktikum per bagian
-* Pendekatan analitis (bukan sekadar coding)
-
-Materi ini bisa langsung dimasukkan ke modul atau LMS.
-
 ---
 
 # 📘 MATERI PRAKTIKUM
