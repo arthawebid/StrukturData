@@ -1,4 +1,4 @@
-# Pertemuan 2 – Rekursi (Recursive Thinking & Problem Solving)
+# Pertemuan 2 – Rekursi
 
 ---
 
