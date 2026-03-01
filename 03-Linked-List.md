@@ -1,15 +1,11 @@
 # 📚 PERTEMUAN 3 SINGLE LINKED LIST (SLL)
 
----
-
 # 1️⃣ Identitas Pertemuan
 
 **Mata Kuliah**: Struktur Data
 **Topik**: Single Linked List
 **Pertemuan ke**: 3
 **Bobot Waktu**: 1 × 150 menit
-
----
 
 # 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
@@ -36,8 +32,6 @@ Setelah mengikuti pertemuan ini mahasiswa mampu:
 * Menjelaskan alur perubahan referensi saat insert dilakukan.
 * Menentukan kompleksitas waktu operasi dasar.
 
----
-
 # 4️⃣ Manfaat Mempelajari Linked List
 
 1. Digunakan pada implementasi Stack & Queue.
@@ -46,8 +40,6 @@ Setelah mengikuti pertemuan ini mahasiswa mampu:
 4. Lebih fleksibel dibanding array dalam alokasi memori.
 
 Menurut Introduction to Algorithms, linked list merupakan struktur linear dinamis dengan akses sekuensial dan efisien dalam operasi penyisipan pada awal struktur.
-
----
 
 # 5️⃣ Konsep Dasar Single Linked List
 
@@ -81,11 +73,8 @@ Head → [10 | * ] → [20 | * ] → [30 | None]
 | Akses indeks         | O(1)         | O(n)          |
 | Fleksibilitas ukuran | Tetap        | Dinamis       |
 
----
 
 # 7️⃣ Implementasi dalam Python
-
----
 
 ## 7.1 Struktur Node
 
@@ -96,8 +85,6 @@ class Node:
         self.next = None
 ```
 
----
-
 ## 7.2 Struktur Linked List
 
 ```python
@@ -106,11 +93,7 @@ class LinkedList:
         self.head = None
 ```
 
----
-
 # 8️⃣ Operasi Dasar Single Linked List
-
----
 
 # 🔹 1. Insert di Awal (O(1))
 
@@ -126,8 +109,6 @@ def insert_awal(self, data):
     node_baru.next = self.head
     self.head = node_baru
 ```
-
----
 
 # 🔹 2. Insert di Akhir (O(n))
 
@@ -152,8 +133,6 @@ def insert_akhir(self, data):
     current.next = node_baru
 ```
 
----
-
 # 🔹 3. Read / Traversal (O(n))
 
 ## Konsep:
@@ -168,8 +147,6 @@ def tampilkan(self):
         current = current.next
     print("None")
 ```
-
----
 
 # 9️⃣ Program Lengkap Single Linked List
 
@@ -226,8 +203,6 @@ Output:
 20 -> 10 -> 30 -> 40 -> None
 ```
 
----
-
 # 🔎 Analisis Kompleksitas
 
 | Operasi      | Kompleksitas |
@@ -238,8 +213,6 @@ Output:
 
 Penjelasan lebih lanjut mengenai kompleksitas struktur list linear dapat ditemukan pada
 Data Structures and Algorithm Analysis in C
-
----
 
 # 🔬 Studi Kasus Sederhana
 
@@ -255,8 +228,6 @@ Diskusi kelas:
 * Mengapa tidak menggunakan array?
 * Bagaimana jika antrian bertambah sangat besar?
 
----
-
 # 🧪 Praktikum Pertemuan 3
 
 ## Tugas Praktikum
@@ -267,8 +238,6 @@ Diskusi kelas:
    * delete(data)
 2. Hitung jumlah node dalam list.
 3. Tampilkan panjang list.
-
----
 
 # 🎯 Project Mini – “Sistem Manajemen Buku”
 
@@ -281,8 +250,6 @@ Buat program:
 
 Output berbentuk menu interaktif.
 
----
-
 # 📊 Rubrik Penilaian Project
 
 | Aspek               | Bobot |
@@ -293,9 +260,6 @@ Output berbentuk menu interaktif.
 | Traversal           | 20%   |
 | Kerapian & Logika   | 20%   |
 
----
-
 # 📖 Referensi
-
 1. Introduction to Algorithms
 2. Data Structures and Algorithm Analysis in C
