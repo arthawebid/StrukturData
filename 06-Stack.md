@@ -1,13 +1,13 @@
 # 📚 PERTEMUAN 6 STACK & QUEUE (Implementasi Array dan Linked List)
 
-# 1️⃣ Identitas Pertemuan
+## 1️⃣ Identitas Pertemuan
 
 **Mata Kuliah**: Struktur Data  
-**Topik**: Stack dan Queue  
+**Topik**: Stack
 **Pertemuan ke**: 6   
 **Durasi**: 1 × 150 menit  
 
-# 2️⃣ Capaian Pembelajaran (Sub-CPMK)
+## 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
 Mahasiswa mampu:
 
@@ -23,7 +23,7 @@ Mahasiswa mampu:
 4. Menganalisis kompleksitas operasi dasar.
 5. Menentukan struktur yang sesuai untuk studi kasus tertentu.
 
-# 3️⃣ Tujuan Pembelajaran
+## 3️⃣ Tujuan Pembelajaran
 
 Setelah pertemuan ini mahasiswa mampu:
 
@@ -32,9 +32,9 @@ Setelah pertemuan ini mahasiswa mampu:
 * Menjelaskan perbedaan implementasi array vs linked list.
 * Menganalisis kompleksitas waktu dan ruang.
 
-# 4️⃣ STACK
+## 4️⃣ STACK
 
-## 🔹 4.1 Definisi
+### 🔹 4.1 Definisi
 
 Stack adalah struktur data linear dengan prinsip:
 
@@ -45,7 +45,7 @@ Elemen terakhir masuk akan pertama keluar.
 Konsep ini dijelaskan dalam pembahasan struktur linear pada
 Introduction to Algorithms
 
-## 🔹 4.2 Operasi Dasar Stack
+### 🔹 4.2 Operasi Dasar Stack
 
 | Operasi   | Keterangan               |
 | --------- | ------------------------ |
@@ -54,7 +54,7 @@ Introduction to Algorithms
 | peek()    | Melihat elemen teratas   |
 | isEmpty() | Mengecek kosong          |
 
-# 5️⃣ Implementasi Stack dengan Array (Python)
+## 5️⃣ Implementasi Stack dengan Array (Python)
 
 ```python
 class StackArray:
@@ -83,7 +83,7 @@ Kompleksitas:
 * Push → O(1)
 * Pop → O(1)
 
-# 6️⃣ Implementasi Stack dengan Linked List
+## 6️⃣ Implementasi Stack dengan Linked List
 
 Keunggulan:
 
