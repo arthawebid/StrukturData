@@ -1,6 +1,4 @@
-# 📚 PERTEMUAN 5
-
-# IMPLEMENTASI LANJUTAN & ANALISIS MENDALAM LINKED LIST
+# 📚 PERTEMUAN 5 IMPLEMENTASI LANJUTAN & ANALISIS MENDALAM LINKED LIST
 
 # 1️⃣ Identitas Pertemuan
 
@@ -9,10 +7,8 @@
 **Pertemuan ke**: 5
 **Waktu**: 1 × 150 menit
 
-# 2️⃣ Capaian Pembelajaran (Sub-CPMK)
-
+# 2️⃣ Capaian Pembelajaran
 Mahasiswa mampu:
-
 1. Mengimplementasikan operasi lanjutan pada Linked List.
 2. Menganalisis kompleksitas waktu dan ruang.
 3. Mengidentifikasi kasus edge case.
@@ -23,7 +19,6 @@ Mahasiswa mampu:
 # 3️⃣ Tujuan Pembelajaran
 
 Setelah pertemuan ini mahasiswa mampu:
-
 * Mengimplementasikan operasi delete, search, reverse.
 * Menangani kondisi list kosong dan satu node.
 * Menganalisis Big-O setiap operasi.
@@ -122,7 +117,6 @@ Reverse Linked List sering dijadikan studi klasik dalam analisis algoritma (liha
 ## 5.2 Kompleksitas Ruang
 
 Linked List membutuhkan:
-
 * 1 pointer tambahan per node (Single)
 * 2 pointer tambahan (Double)
 
@@ -153,7 +147,6 @@ Linked List kurang cache-friendly karena lokasi memori tersebar, sebagaimana dib
 5. Tidak menangani satu node
 
 Diskusi kelas:
-
 * Mengapa kehilangan referensi head fatal?
 * Bagaimana mencegah infinite loop?
 
@@ -168,7 +161,6 @@ Kompleksitas:
 O(1)
 
 ## 🔹 8.2 Implementasi Queue Menggunakan Linked List
-
 Enqueue → insert akhir
 Dequeue → delete awal
 
@@ -180,7 +172,6 @@ O(1) jika menggunakan tail pointer.
 Konsep Floyd’s Cycle Detection (Tortoise and Hare).
 
 Ide:
-
 * Dua pointer dengan kecepatan berbeda
 * Jika bertemu → ada siklus
 
@@ -192,7 +183,6 @@ Pertanyaan analitis:
 
 1. Mengapa Insert Akhir menjadi mahal?
 2. Bagaimana mengoptimalkan Insert Akhir?
-
    * Tambahkan tail pointer
 3. Apa trade-off penggunaan Double Linked List?
 
@@ -209,14 +199,12 @@ Implementasikan:
 ## Latihan 2
 
 Tambahkan:
-
 * Fungsi menghitung panjang list
 * Fungsi mengecek list kosong
 
 ## Latihan 3 (Analitis)
 
 Bandingkan:
-
 * Waktu eksekusi insert 10.000 data pada array vs linked list
   (analisis konseptual, tidak perlu benchmarking real)
 
@@ -227,7 +215,6 @@ Bandingkan:
 Gunakan Circular Linked List.
 
 Fitur:
-
 1. Tambah lagu
 2. Hapus lagu
 3. Tampilkan playlist
@@ -235,7 +222,6 @@ Fitur:
 5. Reverse playlist
 
 Tambahan analisis:
-
 * Jelaskan kompleksitas setiap fitur.
 * Jelaskan mengapa Circular lebih cocok dibanding Single.
 
@@ -250,7 +236,6 @@ Tambahan analisis:
 | Kerapian & Struktur Program   | 15%   |
 
 # 📖 Referensi Akademik
-
 1. Introduction to Algorithms
 2. Data Structures and Algorithm Analysis in C
 
@@ -263,9 +248,5 @@ Pada pertemuan 3–5 mahasiswa telah memahami:
 * Operasi dasar & lanjutan
 * Analisis kompleksitas
 * Studi kasus implementatif
-
-Tahap selanjutnya secara konseptual dapat dilanjutkan ke:
-
-* Stack & Queue berbasis Linked List
 * Hash Table
 * Tree Structure
