@@ -1,6 +1,6 @@
 # 7️⃣ QUEUE
 
-## 🔹 7.1 Definisi
+## 🔹 1 Definisi
 
 Queue adalah struktur data linear dengan prinsip:
 
@@ -11,7 +11,7 @@ Elemen pertama masuk akan pertama keluar.
 Dijelaskan dalam literatur klasik struktur data seperti
 Data Structures and Algorithm Analysis in C
 
-## 🔹 7.2 Operasi Dasar Queue
+## 🔹 2 Operasi Dasar Queue
 
 | Operasi    | Keterangan         |
 | ---------- | ------------------ |
@@ -20,7 +20,7 @@ Data Structures and Algorithm Analysis in C
 | front()    | Lihat elemen depan |
 | isEmpty()  | Cek kosong         |
 
-# 8️⃣ Implementasi Queue dengan Array
+## Implementasi Queue dengan Array
 
 ```python
 class QueueArray:
@@ -43,7 +43,7 @@ Catatan:
 
 * dequeue() menggunakan pop(0) → O(n)
 
-# 9️⃣ Implementasi Queue dengan Linked List (Optimal)
+## Implementasi Queue dengan Linked List (Optimal)
 
 Menggunakan head dan tail pointer.
 
@@ -76,7 +76,7 @@ Kompleksitas:
 * Enqueue → O(1)
 * Dequeue → O(1)
 
-# 1️⃣0️⃣ Perbandingan Implementasi
+## Perbandingan Implementasi
 
 | Struktur    | Insert | Delete | Catatan       |
 | ----------- | ------ | ------ | ------------- |
@@ -85,9 +85,9 @@ Kompleksitas:
 | Queue Array | O(1)   | O(n)   | Tidak efisien |
 | Queue LL    | O(1)   | O(1)   | Optimal       |
 
-# 1️⃣1️⃣ Studi Kasus
+## Studi Kasus
 
-## 🔹 Stack
+### 🔹 Stack
 
 * Undo/Redo
 * Evaluasi ekspresi postfix
@@ -99,62 +99,6 @@ Kompleksitas:
 * Printer job scheduling
 * BFS pada graph
 
-# 🧪 Praktikum Pertemuan 6
-
-## Latihan 1 – Stack
-
-Buat program:
-
-* Input data
-* Push
-* Pop
-* Tampilkan isi stack
-
-## Latihan 2 – Queue
-
-Buat simulasi antrian:
-
-* Tambah pelanggan
-* Layani pelanggan
-* Tampilkan antrian
-
-# 🎯 Mini Project Pertemuan 6
-
-## Project: “Validasi Ekspresi Kurung”
-
-Buat program yang mengecek apakah tanda kurung:
-
-```
-(), {}, []
-```
-
-tersusun dengan benar menggunakan Stack.
-
-Contoh:
-
-Input:
-
-```
-{[()]}
-```
-
-Output:
-
-```
-Valid
-```
-
-Input:
-
-```
-{[(])}
-```
-
-Output:
-
-```
-Tidak Valid
-```
 
 # 📊 Rubrik Penilaian
 
