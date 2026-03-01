@@ -1,27 +1,23 @@
 # 📚 PERTEMUAN 3 SINGLE LINKED LIST (SLL)
 
-# 1️⃣ Identitas Pertemuan
+# 1️⃣ Identitas Pertemuan  
 
-**Mata Kuliah**: Struktur Data
-**Topik**: Single Linked List
-**Pertemuan ke**: 3
-**Bobot Waktu**: 1 × 150 menit
+**Mata Kuliah**: Struktur Data  
+**Topik**: Single Linked List  
+**Pertemuan ke**: 3  
+**Bobot Waktu**: 1 × 150 menit  
 
 # 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
 Mahasiswa mampu:
-
 1. Menjelaskan konsep Linked List sebagai struktur data dinamis.
 2. Mendeskripsikan perbedaan array dan linked list.
 3. Mengimplementasikan Single Linked List dalam Python.
 4. Mengimplementasikan operasi dasar:
-
    * Insert di awal
    * Insert di akhir
    * Read (Traversal)
 5. Menganalisis kompleksitas waktu operasi.
-
----
 
 # 3️⃣ Tujuan Pembelajaran
 
@@ -61,8 +57,6 @@ Head → [10 | * ] → [20 | * ] → [30 | None]
 * Tidak menggunakan indeks
 * Tidak memiliki alokasi memori berurutan
 * Traversal harus dari head
-
----
 
 # 6️⃣ Perbandingan Array vs Linked List
 
