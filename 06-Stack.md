@@ -114,3 +114,23 @@ class StackLinkedList:
 ```
 
 Semua operasi O(1).
+
+
+# 🧪 Praktikum Pertemuan 6
+
+## Latihan 1 – Stack
+
+Buat program:
+
+* Input data
+* Push
+* Pop
+* Tampilkan isi stack
+
+## Latihan 2 – Queue
+
+Buat simulasi antrian:
+
+* Tambah pelanggan
+* Layani pelanggan
+* Tampilkan antrian
