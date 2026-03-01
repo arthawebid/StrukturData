@@ -1,109 +1,299 @@
-# 📚 PERTEMUAN 4 Double Linked List & Circular Linked List
+# 📚 PERTEMUAN 4 DOUBLE LINKED LIST & CIRCULAR LINKED LIST
 
-## 🎯 Tujuan Pembelajaran
+# 1️⃣ Identitas Pertemuan
+
+**Mata Kuliah**: Struktur Data
+**Topik**: Double Linked List & Circular Linked List
+**Pertemuan ke**: 4
+**Waktu**: 1 × 150 menit
+
+
+# 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
 Mahasiswa mampu:
-1. Memahami Double Linked List.  
-2. Memahami Circular Linked List.  
-3. Menganalisis perbedaan ketiga jenis Linked List.  
-4. Mengimplementasikan Double Linked List.
+
+1. Menjelaskan perbedaan Single, Double, dan Circular Linked List.
+2. Menganalisis kelebihan dan kekurangan masing-masing struktur.
+3. Mengimplementasikan Double Linked List.
+4. Mengimplementasikan Circular Linked List.
+5. Menganalisis kompleksitas waktu operasional.
+6. Menentukan struktur yang tepat untuk studi kasus tertentu.
+
+# 3️⃣ Tujuan Pembelajaran
+
+Setelah pertemuan ini mahasiswa mampu:
+
+* Memahami konsep pointer dua arah (prev dan next).
+* Memahami konsep struktur melingkar (circular reference).
+* Mengimplementasikan operasi insert dan traversal.
+* Menjelaskan implikasi kompleksitas waktu dan penggunaan memori.
+
+# 4️⃣ Tinjauan Konseptual
+
+## 🔹 Evolusi Struktur Linked List
+
+1. Single Linked List → satu arah
+2. Double Linked List → dua arah
+3. Circular Linked List → struktur melingkar
+
+Menurut Introduction to Algorithms, variasi struktur list dikembangkan untuk mengoptimalkan efisiensi traversal dan fleksibilitas manipulasi data.
+
+# 5️⃣ DOUBLE LINKED LIST (DLL)
 
 
+## 5.1 Definisi
 
+Double Linked List adalah struktur linear dinamis di mana setiap node memiliki dua referensi:
 
----
+* next → menunjuk ke node berikutnya
+* prev → menunjuk ke node sebelumnya
 
-1. Double Linked List
+## 5.2 Representasi Konseptual
 
-Node memiliki:
+```
+None ← [10] ⇄ [20] ⇄ [30] → None
+```
 
-data
+## 5.3 Karakteristik
 
-next
+* Traversal dua arah
+* Lebih fleksibel untuk operasi delete
+* Membutuhkan memori lebih besar (2 pointer)
 
-prev
+## 5.4 Struktur Node DLL (Python)
 
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+```
+## 5.5 Struktur Double Linked List
 
-Struktur:
+```python
+class DoubleLinkedList:
+    def __init__(self):
+        self.head = None
+```
+## 5.6 Operasi Insert di Awal (O(1))
 
-struct Node {
-    int data;
-    struct Node* next;
-    struct Node* prev;
-};
+```python
+def insert_awal(self, data):
+    node_baru = Node(data)
 
-Ilustrasi:
+    if self.head is not None:
+        self.head.prev = node_baru
+        node_baru.next = self.head
 
-NULL ← [Prev|Data|Next] ↔ [Prev|Data|Next] → NULL
+    self.head = node_baru
+```
 
-Keunggulan:
+## 5.7 Operasi Insert di Akhir (O(n))
 
-Bisa traversal dua arah
+```python
+def insert_akhir(self, data):
+    node_baru = Node(data)
 
-Delete lebih mudah jika node diketahui
+    if self.head is None:
+        self.head = node_baru
+        return
 
+    current = self.head
+    while current.next:
+        current = current.next
 
-Kekurangan:
+    current.next = node_baru
+    node_baru.prev = current
+```
+## 5.8 Traversal Maju dan Mundur
 
-Memori lebih besar
+### Traversal Maju
 
-Implementasi lebih kompleks
+```python
+def tampilkan_maju(self):
+    current = self.head
+    while current:
+        print(current.data, end=" <-> ")
+        current = current.next
+    print("None")
+```
 
+### Traversal Mundur
 
+```python
+def tampilkan_mundur(self):
+    current = self.head
+    if current is None:
+        return
 
----
+    while current.next:
+        current = current.next
 
-2. Circular Linked List
+    while current:
+        print(current.data, end=" <-> ")
+        current = current.prev
+    print("None")
+```
 
-Ciri:
+## 5.9 Analisis Kompleksitas DLL
 
-Node terakhir menunjuk ke node pertama.
+| Operasi      | Kompleksitas                 |
+| ------------ | ---------------------------- |
+| Insert Awal  | O(1)                         |
+| Insert Akhir | O(n)                         |
+| Traversal    | O(n)                         |
+| Delete Node  | O(1)* jika pointer diketahui |
 
-Tidak ada NULL.
+# 6️⃣ CIRCULAR LINKED LIST (CLL)
 
+## 6.1 Definisi
 
-Ilustrasi:
+Circular Linked List adalah struktur di mana node terakhir menunjuk kembali ke head, membentuk siklus.
 
-[Data|Next] → [Data|Next]  
-   ↑                        ↓  
-   ←──────────────  
+## 6.2 Representasi Konseptual
 
-Digunakan pada:
+```
+[10] → [20] → [30]
+  ↑               ↓
+  ← ← ← ← ← ← ← ←
+```
 
-Round Robin Scheduling
+## 6.3 Karakteristik
 
-Sistem antrian melingkar
+* Tidak memiliki nilai None di akhir
+* Cocok untuk sistem rotasi
+* Harus berhati-hati dalam traversal (hindari infinite loop)
 
+Struktur ini banyak digunakan dalam simulasi sistem penjadwalan seperti Round Robin (lihat pembahasan pada Data Structures and Algorithm Analysis in C).
 
+## 6.4 Struktur Node CLL
 
----
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+```
+## 6.5 Struktur Circular Linked List
 
-3. Perbandingan Jenis Linked List
+```python
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+```
+## 6.6 Insert di Akhir (O(n))
 
-Jenis	Pointer	Arah	Kompleksitas
+```python
+def insert(self, data):
+    node_baru = Node(data)
 
-Single	1	Satu arah	Sederhana
-Double	2	Dua arah	Lebih fleksibel
-Circular	1/2	Melingkar	Efisien untuk sistem loop
+    if self.head is None:
+        self.head = node_baru
+        node_baru.next = self.head
+        return
 
+    current = self.head
+    while current.next != self.head:
+        current = current.next
 
+    current.next = node_baru
+    node_baru.next = self.head
+```
+## 6.7 Traversal Circular
 
----
+```python
+def tampilkan(self):
+    if self.head is None:
+        return
 
-🧪 Praktikum Pertemuan 4
+    current = self.head
+    while True:
+        print(current.data, end=" -> ")
+        current = current.next
+        if current == self.head:
+            break
+    print("(kembali ke head)")
+```
 
-1. Buat Double Linked List:
+# 7️⃣ Perbandingan Akademik Struktur
 
-Insert awal
+| Aspek        | Single      | Double         | Circular           |
+| ------------ | ----------- | -------------- | ------------------ |
+| Pointer      | 1           | 2              | 1                  |
+| Traversal    | Satu arah   | Dua arah       | Melingkar          |
+| Memori       | Lebih hemat | Lebih besar    | Sedang             |
+| Implementasi | Mudah       | Lebih kompleks | Butuh kontrol loop |
 
-Insert akhir
+# 8️⃣ Studi Kasus Akademik
 
-Delete node tertentu
+## 🔹 Double Linked List
 
+Kasus:
 
+* Implementasi Undo/Redo pada editor teks
+* Navigasi browser (Back & Forward)
 
-2. Buat Circular Linked List sederhana:
+## 🔹 Circular Linked List
 
-Tambah 4 data
+Kasus:
 
-Tampilkan dengan looping hingga kembali ke head
+* Penjadwalan CPU (Round Robin)
+* Multiplayer turn-based game
+* Sistem playlist lagu
+
+Diskusi kelas:
+
+* Mengapa Circular lebih cocok untuk sistem rotasi?
+* Mengapa Double Linked List lebih fleksibel untuk delete?
+
+# 🧪 Praktikum Pertemuan 4
+
+## Latihan 1 (DLL)
+
+Buat program:
+
+* Insert awal
+* Insert akhir
+* Traversal maju
+* Traversal mundur
+
+## Latihan 2 (CLL)
+
+Simulasikan sistem Round Robin:
+
+* Tambah proses
+* Tampilkan giliran proses
+
+# 🎯 Mini Project Pertemuan 4
+
+## Project: “Simulasi Sistem Antrian Bank”
+
+### Opsi A – Double Linked List
+
+Fitur:
+
+* Tambah nasabah
+* Hapus nasabah tertentu
+* Tampilkan maju & mundur
+
+### Opsi B – Circular Linked List
+
+Fitur:
+
+* Tambah nasabah
+* Simulasikan pelayanan bergilir
+
+# 📊 Rubrik Penilaian
+
+| Aspek                 | Bobot |
+| --------------------- | ----- |
+| Implementasi Node     | 15%   |
+| Operasi Insert        | 25%   |
+| Traversal             | 20%   |
+| Logika Circular       | 20%   |
+| Analisis Kompleksitas | 20%   |
+
+# 📖 Referensi
+1. Introduction to Algorithms
+2. Data Structures and Algorithm Analysis in C
