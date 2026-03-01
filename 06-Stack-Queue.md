@@ -2,10 +2,10 @@
 
 # 1️⃣ Identitas Pertemuan
 
-**Mata Kuliah**: Struktur Data
-**Topik**: Stack dan Queue
-**Pertemuan ke**: 6
-**Durasi**: 1 × 150 menit
+**Mata Kuliah**: Struktur Data  
+**Topik**: Stack dan Queue  
+**Pertemuan ke**: 6   
+**Durasi**: 1 × 150 menit  
 
 # 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
