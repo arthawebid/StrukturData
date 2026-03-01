@@ -1,10 +1,4 @@
-Baik 👍 berikut adalah **Restruktur Lengkap Pertemuan 3 – Linked List (Single Linked List)** disusun sistematis sesuai format RPS (Tujuan → Konsep → Implementasi → Analisis → Praktikum → Project → Referensi).
-
----
-
-# 📚 PERTEMUAN 3
-
-# SINGLE LINKED LIST (SLL)
+# 📚 PERTEMUAN 3 SINGLE LINKED LIST (SLL)
 
 ---
 
