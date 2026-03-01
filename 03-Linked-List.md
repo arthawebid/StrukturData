@@ -1,237 +1,307 @@
-# 📚 PERTEMUAN 3 Konsep Dasar Linked List & Single Linked List
+Baik 👍 berikut adalah **Restruktur Lengkap Pertemuan 3 – Linked List (Single Linked List)** disusun sistematis sesuai format RPS (Tujuan → Konsep → Implementasi → Analisis → Praktikum → Project → Referensi).
 
-## 🎯 Tujuan Pembelajaran
+---
+
+# 📚 PERTEMUAN 3
+
+# SINGLE LINKED LIST (SLL)
+
+---
+
+# 1️⃣ Identitas Pertemuan
+
+**Mata Kuliah**: Struktur Data
+**Topik**: Single Linked List
+**Pertemuan ke**: 3
+**Bobot Waktu**: 1 × 150 menit
+
+---
+
+# 2️⃣ Capaian Pembelajaran (Sub-CPMK)
 
 Mahasiswa mampu:
 
-1. Memahami konsep dasar struktur data Linked List.
+1. Menjelaskan konsep Linked List sebagai struktur data dinamis.
+2. Mendeskripsikan perbedaan array dan linked list.
+3. Mengimplementasikan Single Linked List dalam Python.
+4. Mengimplementasikan operasi dasar:
 
-
-2. Menjelaskan perbedaan array dan linked list.
-
-
-3. Memahami struktur node.
-
-
-4. Mengimplementasikan Single Linked List sederhana.
-
-
-
+   * Insert di awal
+   * Insert di akhir
+   * Read (Traversal)
+5. Menganalisis kompleksitas waktu operasi.
 
 ---
 
-1. Konsep Dasar Linked List
+# 3️⃣ Tujuan Pembelajaran
 
-Linked List adalah struktur data linear dinamis yang terdiri dari sekumpulan node yang saling terhubung melalui pointer (referensi alamat memori).
+Setelah mengikuti pertemuan ini mahasiswa mampu:
 
-Berbeda dengan array:
-
-Array → alokasi memori berurutan (contiguous memory).
-
-Linked List → alokasi memori tidak harus berurutan.
-
-
-Menurut Mark Allen Weiss dalam buku
-Data Structures and Algorithm Analysis in C,
-Linked List memberikan fleksibilitas dalam manajemen memori karena elemen dapat ditambahkan atau dihapus tanpa harus menggeser elemen lainnya.
-
+* Memahami konsep pointer/referensi dalam struktur data dinamis.
+* Mengimplementasikan node dan linked list.
+* Menjelaskan alur perubahan referensi saat insert dilakukan.
+* Menentukan kompleksitas waktu operasi dasar.
 
 ---
 
-2. Struktur Node
+# 4️⃣ Manfaat Mempelajari Linked List
 
-Setiap node terdiri dari:
+1. Digunakan pada implementasi Stack & Queue.
+2. Digunakan pada Graph (Adjacency List).
+3. Digunakan pada manajemen memori dinamis.
+4. Lebih fleksibel dibanding array dalam alokasi memori.
 
-Data
-
-Pointer (next)
-
-
-Ilustrasi:
-
-[Data | Next] → [Data | Next] → [Data | NULL]
-
-Struktur dalam C:
-
-struct Node {
-    int data;
-    struct Node* next;
-};
-
+Menurut Introduction to Algorithms, linked list merupakan struktur linear dinamis dengan akses sekuensial dan efisien dalam operasi penyisipan pada awal struktur.
 
 ---
 
-3. Karakteristik Single Linked List
+# 5️⃣ Konsep Dasar Single Linked List
 
-Hanya memiliki satu pointer (next)
+## 🔹 Definisi
 
-Traversal satu arah
+Single Linked List adalah struktur data linear yang terdiri dari sekumpulan node, di mana setiap node memiliki:
 
-Node terakhir menunjuk ke NULL
+* Data
+* Pointer (referensi) ke node berikutnya
 
+## 🔹 Representasi Konseptual
 
+```
+Head → [10 | * ] → [20 | * ] → [30 | None]
+```
 
----
+## 🔹 Karakteristik
 
-4. Operasi Dasar
-
-1. Insert di awal
-
-
-2. Insert di akhir
-
-
-3. Delete
-
-
-4. Traversal
-
-
-
+* Tidak menggunakan indeks
+* Tidak memiliki alokasi memori berurutan
+* Traversal harus dari head
 
 ---
 
-5. Kompleksitas Waktu
+# 6️⃣ Perbandingan Array vs Linked List
 
-Operasi	Kompleksitas
-
-Akses elemen	O(n)
-Insert awal	O(1)
-Insert akhir	O(n)
-Delete	O(n)
-
-
-Menurut Cormen dkk. dalam
-Introduction to Algorithms,
-Linked List unggul dalam operasi insert/delete dibanding array karena tidak memerlukan pergeseran elemen.
-
+| Aspek                | Array        | Linked List   |
+| -------------------- | ------------ | ------------- |
+| Memori               | Kontigu      | Tidak kontigu |
+| Insert awal          | Mahal (O(n)) | Murah (O(1))  |
+| Akses indeks         | O(1)         | O(n)          |
+| Fleksibilitas ukuran | Tetap        | Dinamis       |
 
 ---
 
-🧪 Praktikum Pertemuan 3
+# 7️⃣ Implementasi dalam Python
 
-Latihan 1
+---
+
+## 7.1 Struktur Node
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+```
+
+---
+
+## 7.2 Struktur Linked List
+
+```python
+class LinkedList:
+    def __init__(self):
+        self.head = None
+```
+
+---
+
+# 8️⃣ Operasi Dasar Single Linked List
+
+---
+
+# 🔹 1. Insert di Awal (O(1))
+
+## Konsep:
+
+1. Node baru dibuat
+2. Next node baru menunjuk ke head lama
+3. Head dipindahkan ke node baru
+
+```python
+def insert_awal(self, data):
+    node_baru = Node(data)
+    node_baru.next = self.head
+    self.head = node_baru
+```
+
+---
+
+# 🔹 2. Insert di Akhir (O(n))
+
+## Konsep:
+
+1. Jika list kosong → head = node baru
+2. Jika tidak → traversal sampai node terakhir
+3. Node terakhir.next = node baru
+
+```python
+def insert_akhir(self, data):
+    node_baru = Node(data)
+
+    if self.head is None:
+        self.head = node_baru
+        return
+
+    current = self.head
+    while current.next:
+        current = current.next
+
+    current.next = node_baru
+```
+
+---
+
+# 🔹 3. Read / Traversal (O(n))
+
+## Konsep:
+
+Menelusuri node dari head hingga None.
+
+```python
+def tampilkan(self):
+    current = self.head
+    while current:
+        print(current.data, end=" -> ")
+        current = current.next
+    print("None")
+```
+
+---
+
+# 9️⃣ Program Lengkap Single Linked List
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_awal(self, data):
+        node_baru = Node(data)
+        node_baru.next = self.head
+        self.head = node_baru
+
+    def insert_akhir(self, data):
+        node_baru = Node(data)
+
+        if self.head is None:
+            self.head = node_baru
+            return
+
+        current = self.head
+        while current.next:
+            current = current.next
+
+        current.next = node_baru
+
+    def tampilkan(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+
+# Pengujian
+ll = LinkedList()
+ll.insert_awal(10)
+ll.insert_awal(20)
+ll.insert_akhir(30)
+ll.insert_akhir(40)
+
+ll.tampilkan()
+```
+
+Output:
+
+```
+20 -> 10 -> 30 -> 40 -> None
+```
+
+---
+
+# 🔎 Analisis Kompleksitas
+
+| Operasi      | Kompleksitas |
+| ------------ | ------------ |
+| Insert Awal  | O(1)         |
+| Insert Akhir | O(n)         |
+| Traversal    | O(n)         |
+
+Penjelasan lebih lanjut mengenai kompleksitas struktur list linear dapat ditemukan pada
+Data Structures and Algorithm Analysis in C
+
+---
+
+# 🔬 Studi Kasus Sederhana
+
+## Kasus: Manajemen Antrian Sederhana
+
+Sistem menyimpan nomor antrian:
+
+* Pasien datang → insert di akhir
+* Admin melihat daftar → traversal
+
+Diskusi kelas:
+
+* Mengapa tidak menggunakan array?
+* Bagaimana jika antrian bertambah sangat besar?
+
+---
+
+# 🧪 Praktikum Pertemuan 3
+
+## Tugas Praktikum
+
+1. Tambahkan fungsi:
+
+   * search(data)
+   * delete(data)
+2. Hitung jumlah node dalam list.
+3. Tampilkan panjang list.
+
+---
+
+# 🎯 Project Mini – “Sistem Manajemen Buku”
 
 Buat program:
 
-Insert 5 data
+* Tambah buku di awal
+* Tambah buku di akhir
+* Tampilkan daftar buku
+* Hitung jumlah buku
 
-Tampilkan seluruh data
-
-
-Latihan 2
-
-Tambahkan fungsi:
-
-Insert di awal
-
-Insert di akhir
-
-
-
-
-📊 ANALISIS KONSEPTUAL (Pemahaman Mahasiswa)
-
-Mahasiswa harus mampu menjawab:
-
-1. Mengapa akses array lebih cepat daripada linked list?
-
-
-2. Mengapa insert di awal linked list lebih cepat?
-
-
-3. Kapan linked list lebih baik daripada array?
-
-
-4. Apa kelemahan utama linked list?
-
-
-
+Output berbentuk menu interaktif.
 
 ---
 
-💻 PROJECT TUGAS AKHIR LINKED LIST
+# 📊 Rubrik Penilaian Project
 
-🎓 Project: Sistem Manajemen Data Mahasiswa
-
-Deskripsi:
-
-Buat program menggunakan Double Linked List untuk:
-
-Menu:
-
-1. Tambah Mahasiswa
-
-
-2. Hapus Mahasiswa
-
-
-3. Edit Data
-
-
-4. Cari Mahasiswa
-
-
-5. Tampilkan Semua
-
-
-6. Sorting berdasarkan NIM
-
-
-7. Keluar
-
-
-
-Struktur Data:
-
-NIM
-
-Nama
-
-Jurusan
-
-IPK
-
-
-Ketentuan:
-
-Gunakan Double Linked List
-
-Terapkan Searching
-
-Terapkan Sorting
-
-Gunakan Modular Function
-
-Tambahkan validasi input
-
-
+| Aspek               | Bobot |
+| ------------------- | ----- |
+| Struktur Node benar | 20%   |
+| Insert Awal         | 20%   |
+| Insert Akhir        | 20%   |
+| Traversal           | 20%   |
+| Kerapian & Logika   | 20%   |
 
 ---
 
-📈 Kriteria Penilaian
+# 📖 Referensi
 
-Aspek	Bobot
-
-Struktur Program	20%
-Implementasi Linked List	30%
-Searching & Sorting	20%
-UI & Interaksi	10%
-Dokumentasi & Laporan	20%
-
-
-
----
-
-📌 Referensi
-
-1. Weiss, Mark Allen. Data Structures and Algorithm Analysis in C.
-
-
-2. Cormen, Thomas H. dkk. Introduction to Algorithms.
-
-
-3. Modul Praktikum Struktur Data.
-
-
-
+1. Introduction to Algorithms
+2. Data Structures and Algorithm Analysis in C
