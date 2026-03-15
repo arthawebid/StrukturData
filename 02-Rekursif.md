@@ -91,14 +91,10 @@ Jika depth = n → ruang O(n).
 
 ### Definisi Matematis
 
-$
-n! = n \times (n-1)!
-$
+$n! = n \times (n-1)!$  
 
-Base case:
-$
-0! = 1
-$
+Base case:  
+$0! = 1$  
 
 ### Implementasi
 
@@ -118,12 +114,8 @@ def faktorial(n):
 
 # 🔹 Latihan 2 – Fibonacci (Naif)
 
-Relasi:
-
-[
-F(n) = F(n-1) + F(n-2)
-]
-
+Relasi:  
+$F(n) = F(n-1) + F(n-2)$  
 Implementasi:
 
 ```python
@@ -180,9 +172,7 @@ Analisis:
 
 # 🔹 Latihan 5 – Pangkat (Exponentiation)
 
-[
-x^n = x \times x^{n-1}
-]
+$x^n = x \times x^{n-1}$  
 
 ```python
 def pangkat(x, n):
