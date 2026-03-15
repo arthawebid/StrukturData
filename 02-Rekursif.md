@@ -91,14 +91,14 @@ Jika depth = n → ruang O(n).
 
 ### Definisi Matematis
 
-[
+$
 n! = n \times (n-1)!
-]
+$
 
 Base case:
-[
+$
 0! = 1
-]
+$
 
 ### Implementasi
 
