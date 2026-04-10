@@ -1,5 +1,5 @@
 # 📘 MATA KULIAH STRUKTUR DATA
-Program Studi ________
+Program Studi _______.  
 Semester 2 | 3 SKS (2T-1P)
 
 ---
