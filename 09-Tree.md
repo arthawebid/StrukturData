@@ -493,3 +493,126 @@ function balanceTree() {
 </body>
 </html>
 ```
+
+
+# menggunakan streamlit python
+```bash
+import streamlit as st
+from graphviz import Digraph
+
+# --- LOGIKA DATA STRUCTURE (BST) ---
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def insert(root, data):
+    if root is None:
+        return Node(data)
+    if data < root.data:
+        root.left = insert(root.left, data)
+    else:
+        root.right = insert(root.right, data)
+    return root
+
+def get_inorder(root, arr):
+    if root:
+        get_inorder(root.left, arr)
+        arr.append(root.data)
+        get_inorder(root.right, arr)
+
+def build_balanced_tree(arr, start, end):
+    if start > end:
+        return None
+    mid = (start + end) // 2
+    node = Node(arr[mid])
+    node.left = build_balanced_tree(arr, start, mid - 1)
+    node.right = build_balanced_tree(arr, mid + 1, end)
+    return node
+
+# --- HELPER VISUALISASI ---
+def visualize_tree(root):
+    dot = Digraph()
+    dot.attr(bgcolor='#020617') # Background gelap sesuai tema asli
+    dot.attr('node', shape='circle', style='filled', color='#22c55e', 
+             fontcolor='black', fontname='Arial', fixedsize='true', width='0.5')
+    dot.attr('edge', color='white')
+
+    def add_edges(node):
+        if node:
+            node_id = str(id(node))
+            dot.node(node_id, str(node.data))
+            if node.left:
+                left_id = str(id(node.left))
+                dot.edge(node_id, left_id)
+                add_edges(node.left)
+            if node.right:
+                right_id = str(id(node.right))
+                dot.edge(node_id, right_id)
+                add_edges(node.right)
+
+    add_edges(root)
+    return dot
+
+# --- STREAMLIT UI ---
+st.set_page_config(page_title="Tree Visualizer", layout="centered")
+
+# Custom CSS untuk mempercantik tampilan
+st.markdown("""
+    <style>
+    .main { background-color: #0f172a; }
+    h1 { color: white; text-align: center; }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("🌳 Tree Visualizer (BST + Balancing)")
+
+# Inisialisasi State agar data tidak hilang saat refresh
+if 'root' not in st.session_state:
+    st.session_state.root = None
+if 'log' not in st.session_state:
+    st.session_state.log = "Selamat datang! Masukkan angka untuk memulai."
+
+# Form Input
+with st.container():
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        val = st.number_input("Masukkan angka", step=1, value=0)
+    with col2:
+        # Tombol Insert
+        if st.button("Insert"):
+            st.session_state.root = insert(st.session_state.root, val)
+            st.session_state.log = f"Insert: {val}"
+
+# Tombol Aksi Lainnya
+col_btn1, col_btn2, col_btn3 = st.columns(3)
+
+with col_btn1:
+    if st.button("Inorder Traversal"):
+        arr = []
+        get_inorder(st.session_state.root, arr)
+        st.session_state.log = f"Inorder: {', '.join(map(str, arr))}"
+
+with col_btn2:
+    if st.button("Balance Tree"):
+        arr = []
+        get_inorder(st.session_state.root, arr)
+        st.session_state.root = build_balanced_tree(arr, 0, len(arr) - 1)
+        st.session_state.log = "Tree berhasil di-balance!"
+
+with col_btn3:
+    if st.button("Clear Tree"):
+        st.session_state.root = None
+        st.session_state.log = "Tree dibersihkan."
+
+# Tampilkan Log
+st.info(st.session_state.log)
+
+# Visualisasi Tree
+if st.session_state.root:
+    graph = visualize_tree(st.session_state.root)
+    st.graphviz_chart(graph)
+else:
+    st.write(" Pohon masih kosong. Silakan insert angka.")
+```
