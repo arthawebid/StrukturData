@@ -279,13 +279,217 @@ def balance_bst(root):
 4. Bandingkan waktu pencarian sebelum & sesudah balancing
 5. Implementasikan AVL Tree lengkap (dengan rotasi)
 
----
+## Simulasi Tree
+```bash
 
-Kalau mau, saya bisa bantu:
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Tree Visualizer</title>
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #0f172a;
+        color: white;
+    }
 
-* 🔥 Versi **slide PPT siap mengajar**
-* 🎥 Animasi visual step-by-step (HTML/JS)
-* 🧪 Soal kuis + auto grading
-* 💻 Project mini (Tree Visualizer interaktif)
+    button {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background: #38bdf8;
+        color: black;
+        font-weight: bold;
+    }
 
-Tinggal bilang saja 👍
+    svg {
+        width: 100%;
+        height: 500px;
+        background: #020617;
+        margin-top: 20px;
+    }
+
+    .node {
+        fill: #22c55e;
+        stroke: white;
+        stroke-width: 2;
+    }
+
+    .active {
+        fill: #facc15;
+    }
+
+    .line {
+        stroke: white;
+        stroke-width: 2;
+    }
+</style>
+</head>
+<body>
+
+<h1>🌳 Tree Visualizer (BST + Balancing)</h1>
+
+<input type="number" id="value" placeholder="Masukkan angka">
+<br>
+
+<button onclick="insertNode()">Insert</button>
+<button onclick="inorderTraversal()">Inorder</button>
+<button onclick="balanceTree()">Balance Tree</button>
+
+<p id="log"></p>
+
+<svg id="canvas"></svg>
+
+<script>
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+        this.x = 0;
+        this.y = 0;
+    }
+}
+
+let root = null;
+let svg = document.getElementById("canvas");
+
+function log(msg) {
+    document.getElementById("log").innerText = msg;
+}
+
+// ================= BST INSERT =================
+function insert(root, data) {
+    if (!root) return new Node(data);
+
+    if (data < root.data) {
+        root.left = insert(root.left, data);
+    } else {
+        root.right = insert(root.right, data);
+    }
+    return root;
+}
+
+function insertNode() {
+    let val = parseInt(document.getElementById("value").value);
+    if (isNaN(val)) return;
+
+    root = insert(root, val);
+    log("Insert: " + val);
+
+    drawTree();
+}
+
+// ================= DRAW TREE =================
+function drawTree() {
+    svg.innerHTML = "";
+    setPosition(root, window.innerWidth / 2, 40, 200);
+    drawNode(root);
+}
+
+function setPosition(node, x, y, offset) {
+    if (!node) return;
+
+    node.x = x;
+    node.y = y;
+
+    setPosition(node.left, x - offset, y + 80, offset / 2);
+    setPosition(node.right, x + offset, y + 80, offset / 2);
+}
+
+function drawNode(node) {
+    if (!node) return;
+
+    if (node.left) drawLine(node, node.left);
+    if (node.right) drawLine(node, node.right);
+
+    drawCircle(node);
+
+    drawNode(node.left);
+    drawNode(node.right);
+}
+
+function drawCircle(node) {
+    let g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+
+    let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", node.x);
+    circle.setAttribute("cy", node.y);
+    circle.setAttribute("r", 20);
+    circle.setAttribute("class", "node");
+
+    let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("x", node.x);
+    text.setAttribute("y", node.y + 5);
+    text.setAttribute("text-anchor", "middle");
+    text.setAttribute("fill", "black");
+    text.textContent = node.data;
+
+    g.appendChild(circle);
+    g.appendChild(text);
+    svg.appendChild(g);
+}
+
+function drawLine(parent, child) {
+    let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", parent.x);
+    line.setAttribute("y1", parent.y);
+    line.setAttribute("x2", child.x);
+    line.setAttribute("y2", child.y);
+    line.setAttribute("class", "line");
+
+    svg.appendChild(line);
+}
+
+// ================= INORDER =================
+function inorderTraversal() {
+    let result = [];
+    inorder(root, result);
+    log("Inorder: " + result.join(", "));
+}
+
+function inorder(node, arr) {
+    if (!node) return;
+    inorder(node.left, arr);
+    arr.push(node.data);
+    inorder(node.right, arr);
+}
+
+// ================= BALANCING =================
+function storeInorder(node, arr) {
+    if (!node) return;
+    storeInorder(node.left, arr);
+    arr.push(node.data);
+    storeInorder(node.right, arr);
+}
+
+function buildBalanced(arr, start, end) {
+    if (start > end) return null;
+
+    let mid = Math.floor((start + end) / 2);
+    let node = new Node(arr[mid]);
+
+    node.left = buildBalanced(arr, start, mid - 1);
+    node.right = buildBalanced(arr, mid + 1, end);
+
+    return node;
+}
+
+function balanceTree() {
+    let arr = [];
+    storeInorder(root, arr);
+
+    root = buildBalanced(arr, 0, arr.length - 1);
+
+    log("Tree berhasil di-balance!");
+    drawTree();
+}
+</script>
+
+</body>
+</html>
+```
