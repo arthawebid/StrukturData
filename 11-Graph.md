@@ -203,7 +203,7 @@ Setelah mempelajari Graph, mahasiswa diharapkan:
 * Menjadi dasar banyak sistem modern dan AI
 * Sangat penting untuk dikuasai
 
-
+---
 # 1. 🔹 Graph Lanjut: Graph untuk AI (recommendation system)
 
 Graph didefinisikan sebagai:
