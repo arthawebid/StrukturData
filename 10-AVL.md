@@ -1,7 +1,6 @@
 # 📘 MATERI: AVL TREE (BALANCED TREE)
-[Materi Graph](https://notebooklm.google.com/notebook/6bbdcd1d-f5ef-42b4-abd3-bc2714336972/artifact/64c346be-d89c-46c1-ae61-42707c3fc623?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
-# 1. Konsep Dasar AVL Tree
+# 1. [Konsep Dasar](https://notebooklm.google.com/notebook/6bbdcd1d-f5ef-42b4-abd3-bc2714336972/artifact/64c346be-d89c-46c1-ae61-42707c3fc623?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_) [AVL Tree](https://notebooklm.google.com/notebook/6bbdcd1d-f5ef-42b4-abd3-bc2714336972/artifact/824fbac6-686e-40e4-89d5-082c96f8e92b?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
 ## 🔹 Apa itu AVL Tree?
 
