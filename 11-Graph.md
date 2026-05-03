@@ -1,4 +1,4 @@
-# 📘 MATERI LANJUTAN: GRAPH (TINGKAT LANJUT)
+# 📘 MATERI: GRAPH
 
 # 1. 🔹 Definisi Formal Graph
 
