@@ -1,7 +1,5 @@
 # 📘 MATERI: AVL TREE (BALANCED TREE)
 
----
-
 # 1. Konsep Dasar AVL Tree
 
 ## 🔹 Apa itu AVL Tree?
@@ -12,7 +10,6 @@ AVL Tree adalah **Binary Search Tree (BST)** yang selalu dijaga **seimbang (bala
 
 * **Adelson-Velsky dan Landis (1962)**
 
----
 
 ## 🔹 Mengapa Perlu AVL Tree?
 
@@ -33,7 +30,6 @@ Masalah pada BST biasa:
 
 * O(log n) ❌ → O(n)
 
----
 
 ## 🔹 Solusi AVL
 
@@ -41,8 +37,6 @@ AVL Tree menjaga:
 [
 |tinggi_kiri - tinggi_kanan| \leq 1
 ]
-
----
 
 # 2. Konsep Balance Factor
 
@@ -52,22 +46,17 @@ AVL Tree menjaga:
 BF = tinggi(kiri) - tinggi(kanan)
 ]
 
----
-
 ## 🔹 Nilai yang valid:
 
 * -1 → seimbang
 * 0 → seimbang
 * +1 → seimbang
 
----
 
 ## 🔹 Tidak seimbang jika:
 
 * BF > 1
 * BF < -1
-
----
 
 ## 🔹 Contoh
 
@@ -81,11 +70,9 @@ BF = tinggi(kiri) - tinggi(kanan)
 
 * BF(30) = 2 ❌ → perlu rotasi
 
----
 
 # 3. Jenis Rotasi pada AVL Tree
 
----
 
 # 🔹 1. LL (Left-Left Case)
 
@@ -94,7 +81,6 @@ BF = tinggi(kiri) - tinggi(kanan)
 * Node berat di kiri
 * Insert di subtree kiri-kiri
 
----
 
 ### Sebelum:
 
@@ -106,8 +92,6 @@ BF = tinggi(kiri) - tinggi(kanan)
 10
 ```
 
----
-
 ### Setelah (Right Rotation):
 
 ```text
@@ -116,18 +100,12 @@ BF = tinggi(kiri) - tinggi(kanan)
  10   30
 ```
 
----
-
----
-
 # 🔹 2. RR (Right-Right Case)
 
 ## 🔸 Kondisi:
 
 * Node berat di kanan
 * Insert di subtree kanan-kanan
-
----
 
 ### Sebelum:
 
@@ -139,7 +117,6 @@ BF = tinggi(kiri) - tinggi(kanan)
       30
 ```
 
----
 
 ### Setelah (Left Rotation):
 
@@ -149,9 +126,6 @@ BF = tinggi(kiri) - tinggi(kanan)
  10   30
 ```
 
----
-
----
 
 # 🔹 3. LR (Left-Right Case)
 
@@ -159,8 +133,6 @@ BF = tinggi(kiri) - tinggi(kanan)
 
 * Berat di kiri
 * Insert di subtree kiri-kanan
-
----
 
 ### Sebelum:
 
@@ -172,14 +144,10 @@ BF = tinggi(kiri) - tinggi(kanan)
      20
 ```
 
----
-
 ### Proses:
 
 1. Rotasi kiri pada 10
 2. Rotasi kanan pada 30
-
----
 
 ### Setelah:
 
@@ -189,18 +157,12 @@ BF = tinggi(kiri) - tinggi(kanan)
  10   30
 ```
 
----
-
----
-
 # 🔹 4. RL (Right-Left Case)
 
 ## 🔸 Kondisi:
 
 * Berat di kanan
 * Insert di subtree kanan-kiri
-
----
 
 ### Sebelum:
 
@@ -212,14 +174,10 @@ BF = tinggi(kiri) - tinggi(kanan)
  20
 ```
 
----
-
 ### Proses:
 
 1. Rotasi kanan pada 30
 2. Rotasi kiri pada 10
-
----
 
 ### Setelah:
 
@@ -229,11 +187,7 @@ BF = tinggi(kiri) - tinggi(kanan)
  10   30
 ```
 
----
-
 # 4. Operasi pada AVL Tree
-
----
 
 ## 🔹 1. Insertion
 
@@ -244,8 +198,6 @@ BF = tinggi(kiri) - tinggi(kanan)
 3. Hitung balance factor
 4. Lakukan rotasi jika perlu
 
----
-
 ## 🔹 2. Deletion
 
 Lebih kompleks karena:
@@ -253,16 +205,12 @@ Lebih kompleks karena:
 * Setelah delete, tree bisa tidak seimbang
 * Harus rebalance kembali
 
----
-
 ## 🔹 3. Searching
 
 Sama seperti BST:
 [
 O(\log n)
 ]
-
----
 
 # 5. Kompleksitas AVL Tree
 
@@ -272,11 +220,7 @@ O(\log n)
 | Delete  | O(log n)     |
 | Search  | O(log n)     |
 
----
-
 # 6. Implementasi AVL Tree (Python)
-
----
 
 ## 🔹 Struktur Node
 
@@ -289,8 +233,6 @@ class Node:
         self.height = 1
 ```
 
----
-
 ## 🔹 Fungsi Pendukung
 
 ```python
@@ -300,9 +242,6 @@ def height(node):
 def get_balance(node):
     return height(node.left) - height(node.right)
 ```
-
----
-
 ## 🔹 Rotasi Kanan
 
 ```python
@@ -318,9 +257,6 @@ def right_rotate(y):
 
     return x
 ```
-
----
-
 ## 🔹 Rotasi Kiri
 
 ```python
@@ -336,8 +272,6 @@ def left_rotate(x):
 
     return y
 ```
-
----
 
 ## 🔹 Insert AVL
 
@@ -376,11 +310,7 @@ def insert(node, key):
     return node
 ```
 
----
-
 # 7. Studi Kasus
-
----
 
 ## 🎯 Kasus: Sistem Ranking Real-time
 
@@ -390,8 +320,6 @@ Masalah:
 * Harus selalu terurut
 * Harus cepat mencari ranking
 
----
-
 ## 🔹 Solusi:
 
 Gunakan AVL Tree karena:
@@ -400,18 +328,12 @@ Gunakan AVL Tree karena:
 * Search cepat
 * Tree selalu seimbang
 
----
-
----
-
 ## 🎯 Kasus: Database Index
 
 AVL digunakan untuk:
 
 * Index data
 * Query cepat
-
----
 
 # 8. Perbandingan AVL vs BST
 
@@ -422,11 +344,7 @@ AVL digunakan untuk:
 | Insert            | Cepat      | Sedikit lebih lambat |
 | Kompleksitas kode | Sederhana  | Lebih kompleks       |
 
----
-
 # 9. Kelebihan & Kekurangan
-
----
 
 ## 🔹 Kelebihan
 
@@ -434,14 +352,10 @@ AVL digunakan untuk:
 ✔ Performa stabil
 ✔ Cocok untuk data dinamis
 
----
-
 ## 🔹 Kekurangan
 
 ❌ Implementasi kompleks
 ❌ Overhead rotasi
-
----
 
 # 🎯 Kesimpulan
 
@@ -449,8 +363,6 @@ AVL digunakan untuk:
 * Menggunakan konsep **balance factor**
 * Rotasi adalah kunci utama
 * Cocok untuk sistem yang membutuhkan performa stabil
-
----
 
 # 🧪 Latihan Mahasiswa
 
