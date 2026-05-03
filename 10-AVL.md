@@ -364,6 +364,197 @@ AVL digunakan untuk:
 * Rotasi adalah kunci utama
 * Cocok untuk sistem yang membutuhkan performa stabil
 
+Berikut versi **AVL Tree Visualizer berbasis Streamlit (Python)** — cocok untuk pembelajaran karena mahasiswa bisa **melihat visual + membaca kode Python langsung**.
+
+---
+
+# 🎬 FITUR
+
+* Input angka step-by-step
+* Visualisasi AVL Tree (pakai `graphviz`)
+* Tampilkan **Balance Factor**
+* Deteksi & tampilkan jenis rotasi (LL, RR, LR, RL)
+* Mode:
+  * Insert manual
+  * Auto sequence
+* Menampilkan log proses
+
+---
+
+# 📦 INSTALL DEPENDENCY
+
+```bash
+pip install streamlit graphviz
+```
+
+# 💻 KODE LENGKAP (STREAMLIT)
+
+Simpan sebagai: `avl_streamlit.py`
+
+```python
+import streamlit as st
+from graphviz import Digraph
+
+# ================= NODE =================
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+        self.height = 1
+
+# ================= AVL UTIL =================
+def height(n):
+    return n.height if n else 0
+
+def get_balance(n):
+    return height(n.left) - height(n.right) if n else 0
+
+# ================= ROTATIONS =================
+def right_rotate(y, logs):
+    logs.append("Rotasi Kanan (LL)")
+    x = y.left
+    T2 = x.right
+
+    x.right = y
+    y.left = T2
+
+    y.height = 1 + max(height(y.left), height(y.right))
+    x.height = 1 + max(height(x.left), height(x.right))
+
+    return x
+
+def left_rotate(x, logs):
+    logs.append("Rotasi Kiri (RR)")
+    y = x.right
+    T2 = y.left
+
+    y.left = x
+    x.right = T2
+
+    x.height = 1 + max(height(x.left), height(x.right))
+    y.height = 1 + max(height(y.left), height(y.right))
+
+    return y
+
+# ================= INSERT =================
+def insert(node, key, logs):
+    if not node:
+        return Node(key)
+
+    if key < node.data:
+        node.left = insert(node.left, key, logs)
+    elif key > node.data:
+        node.right = insert(node.right, key, logs)
+
+    node.height = 1 + max(height(node.left), height(node.right))
+
+    balance = get_balance(node)
+
+    # LL
+    if balance > 1 and key < node.left.data:
+        return right_rotate(node, logs)
+
+    # RR
+    if balance < -1 and key > node.right.data:
+        return left_rotate(node, logs)
+
+    # LR
+    if balance > 1 and key > node.left.data:
+        logs.append("Rotasi LR")
+        node.left = left_rotate(node.left, logs)
+        return right_rotate(node, logs)
+
+    # RL
+    if balance < -1 and key < node.right.data:
+        logs.append("Rotasi RL")
+        node.right = right_rotate(node.right, logs)
+        return left_rotate(node, logs)
+
+    return node
+
+# ================= DRAW TREE =================
+def draw_tree(node, dot=None):
+    if dot is None:
+        dot = Digraph()
+        dot.attr(bgcolor="#0f172a", fontcolor="white")
+
+    if node:
+        bf = get_balance(node)
+        label = f"{node.data}\nBF={bf}"
+
+        color = "lightgreen"
+        if abs(bf) > 1:
+            color = "red"
+
+        dot.node(str(id(node)), label, style="filled", fillcolor=color)
+
+        if node.left:
+            dot.edge(str(id(node)), str(id(node.left)))
+            draw_tree(node.left, dot)
+
+        if node.right:
+            dot.edge(str(id(node)), str(id(node.right)))
+            draw_tree(node.right, dot)
+
+    return dot
+
+# ================= STREAMLIT UI =================
+st.set_page_config(page_title="AVL Visualizer", layout="wide")
+
+st.title("🌳 AVL Tree Visualizer (Python - Streamlit)")
+
+# Session state
+if "root" not in st.session_state:
+    st.session_state.root = None
+if "logs" not in st.session_state:
+    st.session_state.logs = []
+
+# Input
+col1, col2 = st.columns(2)
+
+with col1:
+    val = st.number_input("Masukkan angka", step=1)
+
+    if st.button("Insert"):
+        st.session_state.root = insert(
+            st.session_state.root, val, st.session_state.logs
+        )
+
+with col2:
+    seq = st.text_input("Auto Sequence (contoh: 30,20,10,25)")
+
+    if st.button("Run Sequence"):
+        for x in seq.split(","):
+            if x.strip():
+                st.session_state.root = insert(
+                    st.session_state.root, int(x), st.session_state.logs
+                )
+
+# Draw tree
+st.subheader("Visualisasi Tree")
+if st.session_state.root:
+    dot = draw_tree(st.session_state.root)
+    st.graphviz_chart(dot)
+else:
+    st.info("Tree masih kosong")
+
+# Logs
+st.subheader("Log Proses")
+for log in st.session_state.logs[::-1]:
+    st.write("•", log)
+
+# Reset
+if st.button("Reset Tree"):
+    st.session_state.root = None
+    st.session_state.logs = []
+```
+
+# CARA MENJALANKAN
+```bash
+streamlit run avl_streamlit.py
+```
+
 # 🧪 Latihan Mahasiswa
 
 1. Implementasikan AVL dari nol
