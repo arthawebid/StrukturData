@@ -1,6 +1,6 @@
 # 📘 MATERI: STRUKTUR DATA GRAPH
 
-## 🎯 1. Mengapa Perlu Belajar Graph?
+## 🎯 [1. Mengapa Perlu Belajar Graph?](https://notebooklm.google.com/notebook/6bbdcd1d-f5ef-42b4-abd3-bc2714336972/artifact/a7c11a94-1e54-487e-a078-f3c44d36b10b?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_)
 
 Dalam kehidupan nyata, banyak masalah tidak berbentuk linear atau hierarki (seperti array atau tree), tetapi berbentuk **relasi kompleks antar objek**.
 
