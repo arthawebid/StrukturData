@@ -728,8 +728,147 @@ Gunakan Insertion Sort untuk:
    * data acak
 
 ---
+# 13 Contoh Sort Data
+```bash
+import streamlit as st
+import time
 
-# 13. Kesimpulan
+st.set_page_config(page_title="Sorting I Animation", layout="wide")
+
+st.title("📘 Pertemuan 12 — Sorting I")
+st.markdown("## Bubble Sort, Selection Sort, dan Insertion Sort")
+
+st.write(
+    "Materi ini menampilkan simulasi animasi algoritma sorting dasar "
+    "menggunakan Streamlit."
+)
+
+algorithms = {
+    "Bubble Sort": {
+        "description": "Membandingkan dua elemen berdekatan lalu menukarnya jika salah urut.",
+        "steps": [
+            [5, 3, 8, 1],
+            [3, 5, 8, 1],
+            [3, 5, 1, 8],
+            [3, 1, 5, 8],
+            [1, 3, 5, 8],
+        ],
+        "code": '''def bubble_sort(data):
+    n = len(data)
+
+    for i in range(n):
+        for j in range(0, n-i-1):
+
+            if data[j] > data[j+1]:
+                data[j], data[j+1] = data[j+1], data[j]
+
+    return data'''
+    },
+
+    "Selection Sort": {
+        "description": "Mencari nilai terkecil lalu menempatkannya di posisi awal.",
+        "steps": [
+            [64, 25, 12, 22, 11],
+            [11, 25, 12, 22, 64],
+            [11, 12, 25, 22, 64],
+            [11, 12, 22, 25, 64],
+        ],
+        "code": '''def selection_sort(data):
+    n = len(data)
+
+    for i in range(n):
+
+        min_index = i
+
+        for j in range(i+1, n):
+
+            if data[j] < data[min_index]:
+                min_index = j
+
+        data[i], data[min_index] = data[min_index], data[i]
+
+    return data'''
+    },
+
+    "Insertion Sort": {
+        "description": "Menyisipkan elemen pada posisi yang benar.",
+        "steps": [
+            [9, 5, 1, 4, 3],
+            [5, 9, 1, 4, 3],
+            [1, 5, 9, 4, 3],
+            [1, 4, 5, 9, 3],
+            [1, 3, 4, 5, 9],
+        ],
+        "code": '''def insertion_sort(data):
+    for i in range(1, len(data)):
+
+        key = data[i]
+        j = i - 1
+
+        while j >= 0 and key < data[j]:
+            data[j + 1] = data[j]
+            j -= 1
+
+        data[j + 1] = key
+
+    return data'''
+    }
+}
+
+selected_algo = st.selectbox(
+    "Pilih Algoritma Sorting",
+    list(algorithms.keys())
+)
+
+algo = algorithms[selected_algo]
+
+st.subheader(selected_algo)
+st.write(algo["description"])
+
+st.code(algo["code"], language="python")
+
+chart_placeholder = st.empty()
+text_placeholder = st.empty()
+
+if st.button("▶ Jalankan Animasi"):
+
+    for i, step in enumerate(algo["steps"]):
+
+        chart_placeholder.bar_chart(step)
+        text_placeholder.success(f"Step {i+1}: {step}")
+
+        time.sleep(1.2)
+
+    st.success("Sorting selesai!")
+
+st.markdown("---")
+
+st.header("📝 Tugas C4")
+
+st.markdown(
+    '''
+1. Buat program Bubble Sort ascending.
+2. Modifikasi menjadi descending.
+3. Bandingkan Bubble, Selection, dan Insertion Sort.
+4. Hitung jumlah iterasi tiap algoritma.
+5. Gunakan data input dari user.
+'''
+)
+
+st.markdown("---")
+
+st.subheader("▶ Cara Menjalankan")
+
+st.code(
+    '''pip install streamlit
+streamlit run app.py''',
+    language="bash"
+)
+
+
+```
+---
+# 14. Kesimpulan
 
 * Sorting digunakan untuk mengurutkan data.
 * Bubble Sort bekerja dengan pertukaran elemen berdekatan.
