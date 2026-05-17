@@ -1,4 +1,5 @@
-# Pertemuan 12 — Sorting I
+# [Pertemuan 12](https://notebooklm.google.com/notebook/876b13c6-d172-47d2-a50a-2a9946f58e4e/artifact/b90bf555-425a-4392-ba63-b244e6eecff0?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_) — [Sorting I](https://notebooklm.google.com/notebook/876b13c6-d172-47d2-a50a-2a9946f58e4e/artifact/bad0b722-b73d-448b-a982-cb03beadded5?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)
+
 
 ## Bubble Sort, Selection Sort, dan Insertion Sort
 
