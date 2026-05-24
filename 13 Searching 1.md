@@ -112,10 +112,9 @@ Mencari nilai 9:
 5. Berhenti ketika data ditemukan atau data habis.
 
 ---
-
+```text
 # Flowchart Sequential Search
 
-```text
 Mulai
   ↓
 Input Data dan Key
@@ -130,7 +129,6 @@ Apakah Data Habis?
  ├── Ya → Data Tidak Ditemukan
  └── Tidak → Ulangi
 ```
-
 ---
 
 # Implementasi Sequential Search (Python)
@@ -155,32 +153,7 @@ else:
 
 ---
 
-# Implementasi Sequential Search (Java)
 
-```java
-public class SequentialSearch {
-    public static int search(int[] data, int key) {
-        for(int i = 0; i < data.length; i++) {
-            if(data[i] == key) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public static void main(String[] args) {
-        int[] data = {12, 7, 25, 9, 30};
-
-        int hasil = search(data, 9);
-
-        if(hasil != -1) {
-            System.out.println("Data ditemukan pada indeks " + hasil);
-        } else {
-            System.out.println("Data tidak ditemukan");
-        }
-    }
-}
-```
 
 ---
 
@@ -528,7 +501,6 @@ Buat visualisasi searching menggunakan:
 
 * Python
 * Streamlit
-* Java GUI
 
 ---
 
